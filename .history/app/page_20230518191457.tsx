@@ -15,13 +15,8 @@ export default function Home() {
     return <div>{loading}</div>;
   }
   return (
-    <main>
-
-<h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
     
-      <Button name={"pinga"} link={"/"} />
+      <Button nombre={"undefined"} enlace={"undefined"} />
       {Object.keys(pizzas).map((pizzaId) => {
         const pizzaName = pizzas[pizzaId];
         const pizzaDescription = descriptions[pizzaId];
@@ -33,6 +28,6 @@ export default function Home() {
           </div>
         );
       })}
-    </main>
+    ç
   );
 }

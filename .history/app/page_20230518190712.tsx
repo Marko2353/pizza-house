@@ -16,12 +16,7 @@ export default function Home() {
   }
   return (
     <main>
-
-<h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    
-      <Button name={"pinga"} link={"/"} />
+      <Button name={"undefined"} enlace={"undefined"} />
       {Object.keys(pizzas).map((pizzaId) => {
         const pizzaName = pizzas[pizzaId];
         const pizzaDescription = descriptions[pizzaId];
