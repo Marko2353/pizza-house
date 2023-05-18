@@ -7,13 +7,13 @@ export default function Home() {
   console.log(pizzas);
   return (
     <main>
-      {/* {pizzas.map((pizza, i) => {
+      {Object.keys(pizzas).map((pizza, i) => {
         return (
           <>
             <h1 key={i}>{pizza}</h1>;
           </>
         );
-      })} */}
+      })}
     </main>
   );
 }
