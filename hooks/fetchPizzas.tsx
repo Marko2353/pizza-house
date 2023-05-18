@@ -14,9 +14,7 @@ export default function useFetchPizzas() {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           console.log(docSnap.data());
-        }
-        if (docSnap.exists) {
-          console.log("lol");
+          setPizzas(docSnap.data());
         }
       } catch (err) {
         setError("Failed to load Pizzas!");
