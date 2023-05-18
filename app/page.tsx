@@ -1,14 +1,16 @@
 "use client";
 import useFetchPizzas from "../hooks/fetchPizzas";
-import useFetchDescriptions from "../hooks/fetchDescriptions";
 import React from "react";
 
 export default function Home() {
-  const { pizzas, loading, error } = useFetchPizzas();
-  const { descriptions } = useFetchDescriptions();
-  console.log(pizzas);
+  const { pizzas, descriptions, loading, error } = useFetchPizzas();
 
-  if (pizzas === null || pizzas === undefined) {
+  if (
+    pizzas === null ||
+    pizzas === undefined ||
+    descriptions === null ||
+    descriptions === undefined
+  ) {
     return <div>{loading}</div>;
   }
   return (
