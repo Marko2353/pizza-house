@@ -1,6 +1,7 @@
 "use client";
-import useFetchPizzas from "../hooks/fetchPizzas";
 import React from "react";
+import CallToAction from "../components/buttons/CallToAction";
+import useFetchPizzas from "../hooks/fetchPizzas";
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -26,6 +27,8 @@ export default function Home() {
           </div>
         );
       })}
+
+      <CallToAction name="order takeaway" link="#" />
     </main>
   );
 }

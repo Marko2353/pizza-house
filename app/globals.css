@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .call-to-action {
+    background-color: theme('colors.accent');
+  }
+}
