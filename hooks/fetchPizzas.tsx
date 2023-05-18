@@ -13,7 +13,6 @@ export default function useFetchPizzas() {
         const docRef = doc(db, "test", "test1");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          console.log(docSnap.data());
           setPizzas(docSnap.data());
         }
       } catch (err) {

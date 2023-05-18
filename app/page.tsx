@@ -7,10 +7,10 @@ export default function Home() {
   console.log(pizzas);
   return (
     <main>
-      {Object.keys(pizzas).map((pizza, i) => {
+      {Object.keys(pizzas).map((i) => {
         return (
           <>
-            <h1 key={i}>{pizza}</h1>;
+            <h1>{pizzas[i]}</h1>
           </>
         );
       })}
