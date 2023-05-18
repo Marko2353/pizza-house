@@ -2,22 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-export default function useFetchPizzas() {
+export default function useFetchDescriptions() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [pizzas, setPizzas] = useState(null);
-
+  const [descriptions, setDescriptions] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const docRef = doc(db, "pizzas", "pizza");
+        const docRef = doc(db, "pizzas", "descriptions");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setPizzas(docSnap.data());
+          setDescriptions(docSnap.data());
         }
       } catch (err) {
-        setError("Failed to load Pizzas!");
+        setError("Failed to load descriptions!");
       } finally {
         setLoading(false);
       }
@@ -25,5 +24,5 @@ export default function useFetchPizzas() {
     fetchData();
   }, []);
 
-  return { loading, error, pizzas };
+  return { loading, error, descriptions };
 }

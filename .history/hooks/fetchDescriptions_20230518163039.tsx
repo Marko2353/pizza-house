@@ -7,7 +7,6 @@ export default function useFetchPizzas() {
   const [error, setError] = useState(null);
   const [pizzas, setPizzas] = useState(null);
 
-
   useEffect(() => {
     async function fetchData() {
       try {

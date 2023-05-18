@@ -5,25 +5,26 @@ import React from "react";
 
 export default function Home() {
   const { pizzas, loading, error } = useFetchPizzas();
-  const { descriptions } = useFetchDescriptions();
   console.log(pizzas);
+
+  const { descriptions, loading, error } = useFetchDescriptions();
+  console.log(descriptions);
 
   if (pizzas === null || pizzas === undefined) {
     return <div>{loading}</div>;
   }
   return (
     <main>
-      {Object.keys(pizzas).map((pizzaId) => {
-        const pizzaName = pizzas[pizzaId];
-        const pizzaDescription = descriptions[pizzaId];
+    <div>
+      <h1>Pizza Menu</h1>
+      {Object.entries(pizzas).map(([id, name]) => (
+        <div key={id}>
+          <h2>{name}</h2>
+        </div>
+      ))}
+      
 
-        return (
-          <div key={pizzaId}>
-            <h1>{pizzaName}</h1>
-            <p>{pizzaDescription}</p>
-          </div>
-        );
-      })}
+    </div>
     </main>
   );
 }

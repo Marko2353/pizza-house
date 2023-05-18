@@ -5,7 +5,6 @@ import React from "react";
 
 export default function Home() {
   const { pizzas, loading, error } = useFetchPizzas();
-  const { descriptions } = useFetchDescriptions();
   console.log(pizzas);
 
   if (pizzas === null || pizzas === undefined) {
@@ -13,17 +12,12 @@ export default function Home() {
   }
   return (
     <main>
-      {Object.keys(pizzas).map((pizzaId) => {
-        const pizzaName = pizzas[pizzaId];
-        const pizzaDescription = descriptions[pizzaId];
-
-        return (
-          <div key={pizzaId}>
-            <h1>{pizzaName}</h1>
-            <p>{pizzaDescription}</p>
-          </div>
-        );
-      })}
+      {pizzas.map((pizza, index) => (
+        <div key={index}>
+          <h1>{pizza}</h1>
+          <p>{descriptions[index]}</p>
+        </div>
+      ))}
     </main>
   );
 }

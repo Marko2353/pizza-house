@@ -6,7 +6,7 @@ export default function useFetchPizzas() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [pizzas, setPizzas] = useState(null);
-
+  const [descriptions, setDescriptions] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
