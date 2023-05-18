@@ -10,7 +10,7 @@ export default function useFetchPizzas() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const docRef = doc(db, "test", "test1");
+        const docRef = doc(db, "pizzas", "pizza");
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           setPizzas(docSnap.data());
