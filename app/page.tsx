@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
@@ -23,22 +24,31 @@ export default function Home() {
     <>
 
      <PizzaCard />
+      <NavBar />
+      <section className="w-full h-screen bg-black">
+        <Image
+          src="/img/pizza-of-the-day.jpg"
+          alt=""
+          width={1440}
+          height={1024}
+        />
+      </section>
+      <main>
+        <Button name={"pinga"} link={"/"} />
+        {Object.keys(pizzas).map((pizzaId) => {
+          const pizzaName = pizzas[pizzaId];
+          const pizzaDescription = descriptions[pizzaId];
 
-      <Button name={"pinga"} link={"/"} />
-      {Object.keys(pizzas).map((pizzaId) => {
-        const pizzaName = pizzas[pizzaId];
-        const pizzaDescription = descriptions[pizzaId];
+          return (
+            <div key={pizzaId}>
+              <h1>{pizzaName}</h1>
+              <p>{pizzaDescription}</p>
+            </div>
+          );
+        })}
 
-        return (
-          <div key={pizzaId}>
-            <h1>{pizzaName}</h1>
-            <p>{pizzaDescription}</p>
-          </div>
-        );
-      })}
-
-      <CallToAction name="order takeaway" link="#" />
-    </main>
+        <CallToAction name="order takeaway" link="#" />
+      </main>
     </>
   );
 }
