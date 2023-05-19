@@ -25,11 +25,11 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      
+      <PCardCarousel />
       <DailyPizza />
       
       <main>
-      <PCardCarousel />
+        <PCardContainer />
         
       </main>
     </>

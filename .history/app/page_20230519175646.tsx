@@ -7,7 +7,7 @@ import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardContainer from "../components/PizzaCard/PCardContainer";
-import PCardCarousel from "../components/PizzaCard/PCardCarousel";
+import PCard Carousel from "../components/PizzaCard/PCardCarousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,12 +25,10 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      
       <DailyPizza />
-      
       <main>
-      <PCardCarousel />
-        
+        <PCardContainer />
+        <PCardContainer />
       </main>
     </>
   );

@@ -24,12 +24,12 @@ export default function Home() {
   }
   return (
     <>
-      <NavBar />
-      
+      {/* <NavBar /> */}
+      <PCardCarousel />
       <DailyPizza />
       
       <main>
-      <PCardCarousel />
+        <PCardContainer />
         
       </main>
     </>
