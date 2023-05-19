@@ -22,8 +22,7 @@ export default function Home() {
   }
   return (
   
-<div className="flex flex-row space-x-8">
+
      <PCardContainer />
-     </div>
   );
 }

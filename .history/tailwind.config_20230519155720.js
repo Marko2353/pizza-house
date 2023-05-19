@@ -12,9 +12,6 @@ module.exports = {
         dark: '#333333',
         light: '#F5F5F5',
       },
-      fontFamily: {
-        'pacifico': ['Pacifico', 'cursive'],
-      },
     },
   },
   plugins: [],

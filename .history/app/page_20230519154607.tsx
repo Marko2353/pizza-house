@@ -5,7 +5,7 @@ import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
-import PCardContainer from "../components/PizzaCard/PCardContainer"
+import PizzaCard from "../components/PizzaCard/PizzaCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,8 +22,7 @@ export default function Home() {
   }
   return (
   
-<div className="flex flex-row space-x-8">
-     <PCardContainer />
-     </div>
+
+     <PizzaCard />
   );
 }
