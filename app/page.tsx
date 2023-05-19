@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDragon } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -19,25 +18,32 @@ export default function Home() {
     return <div>{loading}</div>;
   }
   return (
-    
-    <main>
+    <>
       <NavBar />
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <section className="w-full h-screen bg-black">
+        <Image
+          src="/img/pizza-of-the-day.jpg"
+          alt=""
+          width={1440}
+          height={1024}
+        />
+      </section>
+      <main>
+        <Button name={"pinga"} link={"/"} />
+        {Object.keys(pizzas).map((pizzaId) => {
+          const pizzaName = pizzas[pizzaId];
+          const pizzaDescription = descriptions[pizzaId];
 
-      <Button name={"pinga"} link={"/"} />
-      {Object.keys(pizzas).map((pizzaId) => {
-        const pizzaName = pizzas[pizzaId];
-        const pizzaDescription = descriptions[pizzaId];
+          return (
+            <div key={pizzaId}>
+              <h1>{pizzaName}</h1>
+              <p>{pizzaDescription}</p>
+            </div>
+          );
+        })}
 
-        return (
-          <div key={pizzaId}>
-            <h1>{pizzaName}</h1>
-            <p>{pizzaDescription}</p>
-          </div>
-        );
-      })}
-
-      <CallToAction name="order takeaway" link="#" />
-    </main>
+        <CallToAction name="order takeaway" link="#" />
+      </main>
+    </>
   );
 }
