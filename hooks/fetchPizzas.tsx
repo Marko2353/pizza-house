@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { DocumentData, doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function useFetchPizzas() {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [pizzas, setPizzas] = useState(null);
-  const [descriptions, setDescriptions] = useState(null);
+  const [error, setError] = useState<null | DocumentData>(null);
+  const [pizzas, setPizzas] = useState<null | DocumentData>(null);
+  const [descriptions, setDescriptions] = useState<null | DocumentData>(null);
 
   useEffect(() => {
     async function fetchData() {
