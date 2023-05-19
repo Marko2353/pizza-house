@@ -3,7 +3,6 @@ import React from "react";
 import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
-import NavBar from "../components/Navbar/Navbar";
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -17,9 +16,7 @@ export default function Home() {
     return <div>{loading}</div>;
   }
   return (
-    
     <main>
-      <NavBar />
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
       <Button name={"pinga"} link={"/"} />
