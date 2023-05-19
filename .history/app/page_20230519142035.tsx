@@ -4,8 +4,6 @@ import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDragon } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
