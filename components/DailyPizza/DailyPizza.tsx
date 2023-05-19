@@ -1,0 +1,18 @@
+import React from "react";
+import CallToAction from "../buttons/CallToAction";
+
+export default function DailyPizza() {
+  return (
+    <section className="responsive-image">
+      <span className="text-lg text-light uppercase z-20 w-fit">
+        the pizza of the day
+      </span>
+      <h1 className="text-6xl z-20 w-fit mt-4">Margharita</h1>
+      <p className="text-light w-[60ch] z-20 mb-8 mt-8 text-center">
+        Lorem ipsum dolor sit amet consectetur. Bibendum aliquam at elementum
+        lectus lectus morbi etiam ipsum. Sed et ut non magna.
+      </p>
+      <CallToAction name="order now" link="#" />
+    </section>
+  );
+}

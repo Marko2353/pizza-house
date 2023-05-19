@@ -5,6 +5,9 @@ module.exports = {
   './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'pacifico': ['Pacifico', 'cursive']
+      },
       colors: {
         primary: '#FF6F00',
         secondary: '#8BC34A',

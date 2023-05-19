@@ -5,6 +5,7 @@ import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
+import DailyPizza from "../components/DailyPizza/DailyPizza";
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -20,14 +21,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <section className="w-full h-screen bg-black">
-        <Image
-          src="/img/pizza-of-the-day.jpg"
-          alt=""
-          width={1440}
-          height={1024}
-        />
-      </section>
+      <DailyPizza />
       <main>
         <Button name={"pinga"} link={"/"} />
         {Object.keys(pizzas).map((pizzaId) => {
