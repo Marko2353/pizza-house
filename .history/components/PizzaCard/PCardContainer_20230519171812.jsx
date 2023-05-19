@@ -17,27 +17,22 @@ export default function PCardContainer() {
   }
   return (
     <>
-    <div className="flex flex-wrap -mx-4">
       {Object.keys(pizzas).map((pizzaId) => {
         const pizzaName = pizzas[pizzaId];
         const pizzaDescription = descriptions[pizzaId];
-    
+
         return (
-          <div className="w-1/4 px-4">
-    <div className="flex container">
-                <div className="bg-light inline-block shadow-xl">
-                  <h2 className="text-3xl mx-auto mb-8 my-2 text-center">
-                    {pizzaName}
-                  </h2>
-                  <Image className="mx-auto mb-8" src={PizzaImg} alt="" />
-                  <p className="mb-4 mx-8">{pizzaDescription}</p>
-                </div>
-              </div>
+          <div className="flex container">
+            <div className="bg-light inline-block shadow-xl">
+              <h2 className="text-3xl mx-auto mb-8 my-2 text-center">
+                {pizzaName}
+              </h2>
+              <Image className="mx-auto mb-8" src={PizzaImg} alt="" />
+              <p className="mb-4 mx-8">{pizzaDescription}</p>
+            </div>
           </div>
         );
       })}
-    </div>
-    
-        </>
+    </>
   );
 }
