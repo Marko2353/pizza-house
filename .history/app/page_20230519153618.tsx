@@ -20,25 +20,9 @@ export default function Home() {
     return <div>{loading}</div>;
   }
   return (
-    <>
+   
 
      <PizzaCard />
 
-      <Button name={"pinga"} link={"/"} />
-      {Object.keys(pizzas).map((pizzaId) => {
-        const pizzaName = pizzas[pizzaId];
-        const pizzaDescription = descriptions[pizzaId];
-
-        return (
-          <div key={pizzaId}>
-            <h1>{pizzaName}</h1>
-            <p>{pizzaDescription}</p>
-          </div>
-        );
-      })}
-
-      <CallToAction name="order takeaway" link="#" />
-    </main>
-    </>
   );
 }

@@ -4,7 +4,6 @@ import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
-import PizzaCard from "../components/PizzaCard/PizzaCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,8 +20,10 @@ export default function Home() {
   }
   return (
     <>
-
-     <PizzaCard />
+    <NavBar />
+    <main>
+    <img src={Logo} alt="" />
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
       <Button name={"pinga"} link={"/"} />
       {Object.keys(pizzas).map((pizzaId) => {

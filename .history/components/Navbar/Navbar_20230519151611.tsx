@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../buttons/Button";
 import CallToAction from "../buttons/CallToAction";
-import Logo from "../../assets/img/Logo.svg";
+import Logo from "../../assets/img/pizza_example.png";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -14,7 +14,6 @@ export default function NavBar() {
             <a href="javascript:void(0)">
               <h2 className="text-2xl font-bold text-white">LOGO</h2>
               <img src={Logo} alt="" />
-              <img src="/assets/img/Logo.svg" alt="" />
             </a>
             <div className="md:hidden">
               <button

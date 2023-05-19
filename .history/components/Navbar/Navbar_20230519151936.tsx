@@ -13,8 +13,7 @@ export default function NavBar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
               <h2 className="text-2xl font-bold text-white">LOGO</h2>
-              <img src={Logo} alt="" />
-              <img src="/assets/img/Logo.svg" alt="" />
+              <img src="../../assets/img/Logo.svg" alt="" />
             </a>
             <div className="md:hidden">
               <button
