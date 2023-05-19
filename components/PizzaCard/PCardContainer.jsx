@@ -1,6 +1,8 @@
 import React from "react";
-import PizzaCard from "../PizzaCard/PizzaCard";
+
 import useFetchPizzas from "../../hooks/fetchPizzas";
+import Image from "next/image";
+import PizzaImg from "../../public/img/pizza_example.png";
 
 export default function PCardContainer() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -20,11 +22,14 @@ export default function PCardContainer() {
         const pizzaDescription = descriptions[pizzaId];
 
         return (
-            <div className="flex flex-wrap">
-          <PizzaCard
-            pizzaName={pizzaName}
-            pizzaDescription={pizzaDescription}
-          />
+          <div className="flex container">
+            <div className="bg-light inline-block shadow-xl">
+              <h2 className="text-3xl mx-auto mb-8 my-2 text-center">
+                {pizzaName}
+              </h2>
+              <Image className="mx-auto mb-8" src={PizzaImg} alt="" />
+              <p className="mb-4 mx-8">{pizzaDescription}</p>
+            </div>
           </div>
         );
       })}

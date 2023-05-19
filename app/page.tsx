@@ -26,24 +26,8 @@ export default function Home() {
       <NavBar />
       <DailyPizza />
       <main>
-        <Button name={"pinga"} link={"/"} />
-        {Object.keys(pizzas).map((pizzaId) => {
-          const pizzaName = pizzas[pizzaId];
-          const pizzaDescription = descriptions[pizzaId];
-
-          return (
-            <div key={pizzaId}>
-              <h1>{pizzaName}</h1>
-              <p>{pizzaDescription}</p>
-            </div>
-          );
-        })}
-
-        <CallToAction name="order takeaway" link="#" />
-      </main>
-      <div className="flex flex-row space-x-8">
         <PCardContainer />
-      </div>
+      </main>
     </>
   );
 }
