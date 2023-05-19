@@ -7,7 +7,7 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full shadow absolute top-0 left-0 z-30 mt-5 uppercase">
+    <nav className="w-full bg-dark shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -61,7 +61,7 @@ export default function NavBar() {
                 <a href="javascript:void(0)">Home</a>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">our pizza</a>
+                <a href="javascript:void(0)">Blog</a>
               </li>
               <li className="text-white hover:text-indigo-200">
                 <a href="javascript:void(0)">About US</a>

@@ -5,10 +5,12 @@ import CallToAction from "../components/buttons/CallToAction";
 import useFetchPizzas from "../hooks/fetchPizzas";
 import Button from "../components/buttons/Button";
 import NavBar from "../components/Navbar/Navbar";
-import DailyPizza from "../components/DailyPizza/DailyPizza";
-import PCardContainer from "../components/PizzaCard/PCardContainer";
+<<<<<<< HEAD
+import PizzaCard from "../components/PizzaCard/PizzaCard"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
+=======
+>>>>>>> d50f32bf30cf18fb10d8c1bfb4b2113268c9b327
 
 export default function Home() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -23,8 +25,17 @@ export default function Home() {
   }
   return (
     <>
+
+     <PizzaCard />
       <NavBar />
-      <DailyPizza />
+      <section className="w-full h-screen bg-black">
+        <Image
+          src="/img/pizza-of-the-day.jpg"
+          alt=""
+          width={1440}
+          height={1024}
+        />
+      </section>
       <main>
         <Button name={"pinga"} link={"/"} />
         {Object.keys(pizzas).map((pizzaId) => {
@@ -41,9 +52,6 @@ export default function Home() {
 
         <CallToAction name="order takeaway" link="#" />
       </main>
-      <div className="flex flex-row space-x-8">
-        <PCardContainer />
-      </div>
     </>
   );
 }
