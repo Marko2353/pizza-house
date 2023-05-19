@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../buttons/Button";
 import CallToAction from "../buttons/CallToAction";
-import Logo from "../img/Logo.svg"
+import Logo from "../img/Logo.svg";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -12,9 +12,7 @@ export default function NavBar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
-
               <h2 className="text-2xl font-bold text-white">LOGO</h2>
-              
             </a>
             <div className="md:hidden">
               <button
@@ -75,14 +73,14 @@ export default function NavBar() {
               </li>
             </ul>
 
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <Button name={"ORDER TAKEAWAY"} link={"/"} />
-              <Button name={"BOOK A TABLE"} link={"/"} />
-            </div>
+            {/* <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+              <CallToAction name="ORDER TAKEAWAY" link="/" />
+              <CallToAction name="BOOK A TABLE" link="/" />
+            </div> */}
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          <CallToAction name={"ORDER TAKEAWAY"} link={"/"} />
+          <CallToAction name="order takeaway" link="/" />
           <CallToAction name={"BOOK A TABLE"} link={"/"} />
         </div>
       </div>
