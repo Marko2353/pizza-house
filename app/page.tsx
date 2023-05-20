@@ -6,6 +6,7 @@ import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   const [staticData, setStaticData] = useState<{ [x: string]: any }[]>([]);
@@ -53,6 +54,7 @@ export default function Home() {
                   button={"contact us"}
                 />
               </main>
+              <Footer />
             </>
           );
         })}

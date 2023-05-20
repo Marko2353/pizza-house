@@ -12,7 +12,9 @@ export default function DailyPizza() {
         Lorem ipsum dolor sit amet consectetur. Bibendum aliquam at elementum
         lectus lectus morbi etiam ipsum. Sed et ut non magna.
       </p>
-      <CallToAction name="order now" link="#" />
+      <span className="z-30 text-lg">
+        <CallToAction name="order now" link="#" />
+      </span>
     </section>
   );
 }

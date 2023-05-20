@@ -7,11 +7,15 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
-  @apply text-dark text-base;
 }
 
 body {
   @apply bg-light relative;
+}
+
+p,
+span {
+  @apply text-dark text-base;
 }
 
 h1,
@@ -44,7 +48,7 @@ h4 {
 
 @layer components {
   .call-to-action {
-    @apply bg-accent text-light text-lg font-bold uppercase p-3 rounded-xl block float-left w-fit z-20;
+    @apply bg-accent text-light font-bold uppercase p-3 rounded-xl block float-left w-fit z-20;
   }
 
   .box-shadow {

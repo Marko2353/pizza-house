@@ -77,10 +77,14 @@ export default function NavBar() {
             </div> */}
           </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-          <CallToAction name="order takeaway" link="/" />
-          <CallToAction name={"BOOK A TABLE"} link={"/"} />
-        </div>
+        <ul className="flex gap-3">
+          <li className="text-lg">
+            <CallToAction name="order takeaway" link="/" />
+          </li>
+          <li className="text-lg">
+            <CallToAction name={"BOOK A TABLE"} link={"/"} />
+          </li>
+        </ul>
       </div>
     </nav>
   );
