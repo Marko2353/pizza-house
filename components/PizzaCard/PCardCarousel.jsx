@@ -46,7 +46,7 @@ export default function PCardCarousel() {
   });
 
   return (
-    <section className="container py-10 m-auto bg-dark">
+    <section className="py-10 m-auto bg-dark">
       <h1 className="text-center">Our pizzas</h1>
       <p className="w-[60ch] mx-auto my-5 text-center text-light">
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
@@ -69,7 +69,7 @@ export default function PCardCarousel() {
             className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
             onClick={scrollToNext}
           >
-            <Image src={Arrow} alt="" className="transform rotate-180"/>
+            <Image src={Arrow} alt="" className="transform rotate-180" />
           </button>
         </div>
       </div>
