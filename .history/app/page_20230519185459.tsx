@@ -41,10 +41,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl pellentesque amet non. Pellentesque aliquam vestibulum quis et purus est. Purus elementum quis sodales dictumst eget. Dignissim et lacus nibh duis mauris turpis mi id."
           }
         />
-
-        
       </main>
-      <PCardCarousel />
     </>
   );
 }

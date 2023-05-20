@@ -42,9 +42,8 @@ export default function Home() {
           }
         />
 
-        
+        <PCardCarousel
       </main>
-      <PCardCarousel />
     </>
   );
 }

@@ -50,7 +50,7 @@ export default function PCardCarousel() {
   }, []);
 
   return (
-    <div className="container relative mx-auto">
+    <div className="">
       <div className="flex overflow-x-auto" ref={carouselRef}>
         {pizzaGroups.map((group, index) => (
           <div className="flex" key={index}>
