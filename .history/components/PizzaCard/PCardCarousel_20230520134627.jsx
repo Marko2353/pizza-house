@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import PizzaCard from "./PizzaCard";
 import useFetchPizzas from "../../hooks/fetchPizzas";
-import Image from "next/image";
-import Arrow from "../../public/img/arrow.svg";
 
 export default function PCardCarousel() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -46,30 +44,30 @@ export default function PCardCarousel() {
   });
 
   return (
-    <section className="container py-10 m-auto bg-dark">
+    <section className="container py-10 m-auto bg-dark overflow-hide">
       <h1 className="text-center">Our pizzas</h1>
       <p className="w-[60ch] mx-auto my-5 text-center text-light">
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
         pellentesque amet non. Pellentesque aliquam
       </p>
       <div className="container relative w-2/4 mx-auto">
-        <div className="flex overflow-x-hidden" ref={carouselRef}>
+        <div className="flex overflow-x-auto" ref={carouselRef}>
           <div className="flex">{pizzaCards}</div>
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
           <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
             onClick={scrollToPrevious}
           >
-            <Image src={Arrow} alt="" />
+            {"<"}
           </button>
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 right-4">
           <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
             onClick={scrollToNext}
           >
-            <Image src={Arrow} alt="" className="transform rotate-180"/>
+            {">"}
           </button>
         </div>
       </div>

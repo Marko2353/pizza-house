@@ -58,7 +58,7 @@ export default function PCardCarousel() {
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
           <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
             onClick={scrollToPrevious}
           >
             <Image src={Arrow} alt="" />
@@ -66,10 +66,11 @@ export default function PCardCarousel() {
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 right-4">
           <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
             onClick={scrollToNext}
           >
-            <Image src={Arrow} alt="" className="transform rotate-180"/>
+           
+            <Image src={Arrow} alt="" />
           </button>
         </div>
       </div>

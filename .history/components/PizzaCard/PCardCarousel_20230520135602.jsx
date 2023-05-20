@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import PizzaCard from "./PizzaCard";
 import useFetchPizzas from "../../hooks/fetchPizzas";
-import Image from "next/image";
-import Arrow from "../../public/img/arrow.svg";
 
 export default function PCardCarousel() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -52,26 +50,22 @@ export default function PCardCarousel() {
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
         pellentesque amet non. Pellentesque aliquam
       </p>
-      <div className="container relative w-2/4 mx-auto">
-        <div className="flex overflow-x-hidden" ref={carouselRef}>
+      <div className="relative">
+        <div className="overflow-x-hidden" ref={carouselRef}>
           <div className="flex">{pizzaCards}</div>
         </div>
-        <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
-          <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
-            onClick={scrollToPrevious}
-          >
-            <Image src={Arrow} alt="" />
-          </button>
-        </div>
-        <div className="absolute transform -translate-y-1/2 top-1/2 right-4">
-          <button
-            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
-            onClick={scrollToNext}
-          >
-            <Image src={Arrow} alt="" className="transform rotate-180"/>
-          </button>
-        </div>
+        <button
+          className="absolute p-2 transform -translate-y-1/2 bg-gray-300 rounded-full top-1/2 left-4 hover:bg-gray-400 focus:outline-none"
+          onClick={scrollToPrevious}
+        >
+          {"<"}
+        </button>
+        <button
+          className="absolute p-2 transform -translate-y-1/2 bg-gray-300 rounded-full top-1/2 right-4 hover:bg-gray-400 focus:outline-none"
+          onClick={scrollToNext}
+        >
+          {">"}
+        </button>
       </div>
     </section>
   );
