@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
-import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   const [staticData, setStaticData] = useState<{ [x: string]: any }[]>([]);
@@ -52,15 +51,12 @@ export default function Home() {
                   button={"book now"}
                 />
 
-                <PCardCarousel />
-
                 <AboutContact
                   title={data.title[1]}
                   description={data.description[1]}
                   button={"contact us"}
                 />
               </main>
-              <Footer />
             </>
           );
         })}
