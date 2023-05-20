@@ -38,7 +38,10 @@ export default function PCardCarousel() {
     const pizzaDescription = descriptions[pizzaId];
     return (
       <div className="flex mr-4 " key={pizzaId}>
-        <PizzaCard pizzaName={pizzaName} pizzaDescription={pizzaDescription} />
+        <PizzaCard
+          pizzaName={pizzaName}
+          pizzaDescription={pizzaDescription}
+        />
       </div>
     );
   });
@@ -46,31 +49,30 @@ export default function PCardCarousel() {
   return (
     <section className="container py-10 m-auto bg-dark">
       <h1 className="text-center">Our pizzas</h1>
-      <p className="w-[60ch] mx-auto my-5 text-center text-light">
-        Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
-        pellentesque amet non. Pellentesque aliquam
-      </p>
-      <div className="container relative w-2/4 mx-auto">
-        <div className="flex overflow-x-auto" ref={carouselRef}>
-          <div className="flex">{pizzaCards}</div>
-        </div>
-        <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
-          <button
-            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
-            onClick={scrollToPrevious}
-          >
-            {"<"}
-          </button>
-        </div>
-        <div className="absolute transform -translate-y-1/2 top-1/2 right-4">
-          <button
-            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
-            onClick={scrollToNext}
-          >
-            {">"}
-          </button>
+      <p className="text-center my-5 w-[60ch] text-light">Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl pellentesque amet non. Pellentesque aliquam</p>
+    <div className="container relative w-2/4 mx-auto">
+      <div className="flex overflow-x-auto" ref={carouselRef}>
+        <div className="flex">
+        {pizzaCards}
         </div>
       </div>
+      <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
+        <button
+          className="mr-10 text-blue"
+          onClick={scrollToPrevious}
+        >
+          {"<"}
+        </button>
+      </div>
+      <div className="absolute transform -translate-y-1/2 top-1/2 right-4">
+        <button
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
+          onClick={scrollToNext}
+        >
+          {">"}
+        </button>
+      </div>
+    </div>
     </section>
   );
 }

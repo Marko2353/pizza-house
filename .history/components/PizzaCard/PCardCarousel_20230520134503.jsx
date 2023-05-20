@@ -46,12 +46,12 @@ export default function PCardCarousel() {
   return (
     <section className="container py-10 m-auto bg-dark">
       <h1 className="text-center">Our pizzas</h1>
-      <p className="w-[60ch] mx-auto my-5 text-center text-light">
+      <p className="w-[60ch] mx-auto my-5 text-center text-light overflow-hide">
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
         pellentesque amet non. Pellentesque aliquam
       </p>
-      <div className="container relative w-2/4 mx-auto">
-        <div className="flex overflow-x-auto" ref={carouselRef}>
+      <div className="container relative w-2/4 mx-auto overflow-hide">
+        <div className="flex overflow-x-auto overflow-hide" ref={carouselRef}>
           <div className="flex">{pizzaCards}</div>
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 left-4">

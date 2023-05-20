@@ -46,7 +46,7 @@ export default function PCardCarousel() {
   return (
     <section className="container py-10 m-auto bg-dark">
       <h1 className="text-center">Our pizzas</h1>
-      <p className="w-[60ch] mx-auto my-5 text-center text-light">
+      <p className="w-[60ch] mx-auto my-5 text-center  text-light">
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
         pellentesque amet non. Pellentesque aliquam
       </p>

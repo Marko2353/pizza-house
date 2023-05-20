@@ -46,7 +46,7 @@ export default function PCardCarousel() {
   return (
     <section className="container py-10 m-auto bg-dark">
       <h1 className="text-center">Our pizzas</h1>
-      <p className="w-[60ch] mx-auto my-5 text-center text-light">
+      <p className="w-[60ch] mx-auto my-5 text-center  text-light">
         Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
         pellentesque amet non. Pellentesque aliquam
       </p>
@@ -56,7 +56,7 @@ export default function PCardCarousel() {
         </div>
         <div className="absolute transform -translate-y-1/2 top-1/2 left-4">
           <button
-            className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 focus:outline-none"
+            className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
             onClick={scrollToPrevious}
           >
             {"<"}
