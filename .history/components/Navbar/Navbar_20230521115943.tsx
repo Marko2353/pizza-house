@@ -12,7 +12,7 @@ export default function NavBar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <Link href="/">
+          <Link href="/">Home
             <Image src={Logo} alt="" />
             </Link>
             <div className="md:hidden">

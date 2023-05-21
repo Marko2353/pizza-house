@@ -6,7 +6,7 @@ import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAbo
 function OurPizzas() {
   return (
     <>
-      <section className="pt-40">
+      <div className="pt-40">
         <OurAboutContactHeader
           title={"Our pizzas"}
           description={
@@ -14,7 +14,7 @@ function OurPizzas() {
           }
         />
         <PCardContainer />
-      </section>
+      </div>
     </>
 
   );
