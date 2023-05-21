@@ -3,11 +3,12 @@ import Button from "../buttons/Button";
 import CallToAction from "../buttons/CallToAction";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
+import Link from "next/link";
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full shadow absolute top-0 left-0 z-30 mt-5 uppercase">
+    <nav className="w-full shadow absolute top-0 left-0 z-30 mt-5 uppercase bg-dark">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -58,16 +59,16 @@ export default function NavBar() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Home</a>
+                <Link href="#">Home</Link>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">our pizza</a>
+                <Link href="/ourpizza">our pizza</Link>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">About US</a>
+                <Link href="/about">About US</Link>
               </li>
               <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Contact US</a>
+                <Link href="/contact">Contact US</Link>
               </li>
             </ul>
 
@@ -79,10 +80,10 @@ export default function NavBar() {
         </div>
         <ul className="flex gap-3">
           <li className="text-lg">
-            <CallToAction name="order takeaway" link="/" />
+            <CallToAction name="order takeaway" link="/takeaway" />
           </li>
           <li className="text-lg">
-            <CallToAction name={"BOOK A TABLE"} link={"/"} />
+            <CallToAction name={"BOOK A TABLE"} link={"/booking"} />
           </li>
         </ul>
       </div>
