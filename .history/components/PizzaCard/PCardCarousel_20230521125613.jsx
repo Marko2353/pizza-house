@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PizzaCard from "./PizzaCard";
 import useFetchPizzas from "../../hooks/fetchPizzas";
 import Image from "next/image";
 import Arrow from "../../public/img/arrow.svg";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+
 
 export default function PCardCarousel() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
@@ -34,6 +37,24 @@ export default function PCardCarousel() {
       });
     }
   };
+
+  const [staticData, setStaticData] = useState<{ [x: string]: any }[]>([]);
+
+  const dbInstance = collection(db, "static");
+
+  const getStatic = () => {
+    getDocs(dbInstance).then((data) => {
+      setStaticData(
+        data.docs.map((item) => {
+          return { ...item.data() };
+        })
+      );
+    });
+  };
+
+  useEffect(() => {
+    getStatic();
+  }, []);
 
   const pizzaCards = Object.keys(pizzas).map((pizzaId) => {
     const pizzaName = pizzas[pizzaId];
