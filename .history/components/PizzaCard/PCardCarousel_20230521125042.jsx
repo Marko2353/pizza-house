@@ -4,9 +4,6 @@ import useFetchPizzas from "../../hooks/fetchPizzas";
 import Image from "next/image";
 import Arrow from "../../public/img/arrow.svg";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
-import BookStatic from "../components/BookStatic/BookStatic";
-
 export default function PCardCarousel() {
   const { pizzas, descriptions, loading, error } = useFetchPizzas();
   const carouselRef = useRef(null);
