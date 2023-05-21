@@ -1,5 +1,10 @@
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
 
-export default function Contact() {
-  return <div>contact</div>;
+export default function contact() {
+  return (
+    <div className="bg-dark w-full h-24">
+      <Navbar />
+    </div>
+  );
 }
