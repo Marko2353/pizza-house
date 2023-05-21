@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import PCardContainer from "../../components/PizzaCard/PCardContainer";
+import Image from "next/image";
+import PizzaImg from "../../public/img/our_pizzas.png";
+import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader"
 
 function OurPizzas() {

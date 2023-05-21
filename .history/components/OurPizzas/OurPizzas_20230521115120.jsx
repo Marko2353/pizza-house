@@ -1,12 +1,10 @@
-"use client";
 import React from "react";
-import PCardContainer from "../../components/PizzaCard/PCardContainer";
-import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader"
+import PCardContainer from "../PizzaCard/PCardContainer";
+import OurAboutContactHeader from "../OurAboutContactHeader/OurAboutContactHeader";
 
 function OurPizzas() {
   return (
     <>
-
       <div className="pt-40">
         <OurAboutContactHeader
           title={"Our pizzas"}
@@ -17,7 +15,6 @@ function OurPizzas() {
         <PCardContainer />
       </div>
     </>
-
   );
 }
 
