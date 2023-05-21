@@ -1,4 +1,5 @@
 import React from "react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
 import CallToAction from "../buttons/CallToAction";
@@ -10,7 +11,27 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
-import MapContainer from "./MapContainer";
+
+const MapContainer = (props) => {
+  const mapStyles = {
+    width: "100%",
+    height: "300px",
+  };
+
+  return (
+    <Map
+      google={props.google}
+      zoom={14}
+      style={mapStyles}
+      initialCenter={{
+        lat: 55.770549232855636, 
+        lng: 12.51160761903358
+      }}
+    >
+      <Marker position={{ lat: 55.770549232855636, lng: 12.51160761903358 }} />
+    </Map>
+  );
+};
 
 export default function Footer() {
   return (
@@ -108,7 +129,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          
+          <Image className="rounded-xl box-shadow" src={map} alt="" />
         </div>
       </div>
     </footer>

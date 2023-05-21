@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          
+          <Image className="rounded-xl box-shadow" src={map} alt="" />
         </div>
       </div>
     </footer>

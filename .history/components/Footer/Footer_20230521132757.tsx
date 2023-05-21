@@ -10,7 +10,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
-import MapContainer from "./MapContainer";
 
 export default function Footer() {
   return (
@@ -53,7 +52,7 @@ export default function Footer() {
           <h3 className="mb-4">Social Media</h3>
           <ul className="flex flex-col gap-4">
             <li className="text-light">
-              <Link target="_blank" className="flex gap-3 items-center text-xs" href={"https://instagram.com/"}>
+              <Link className="flex gap-3 items-center text-xs" href={"twitter.com"}>
                 <FontAwesomeIcon
                   className="text-xl"
                   icon={faInstagram}
@@ -108,7 +107,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          
+          <Image className="rounded-xl box-shadow" src={map} alt="" />
         </div>
       </div>
     </footer>
