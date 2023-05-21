@@ -5,7 +5,7 @@ import BookImg from "../../public/img/book-image.png";
 
 export default function BookStatic({ title, description, button }) {
   return (
-    <section className="container m-auto flex items-center justify-center gap-12 mb-20">
+    <section className="container m-auto flex items-center justify-center gap-12 my-20">
       <Image className="rounded-xl box-shadow" src={BookImg} alt="" />
       <div>
         <h2>{title}</h2>
