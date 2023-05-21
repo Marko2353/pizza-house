@@ -10,7 +10,7 @@ function OurPizzas() {
       <div className="bg-dark w-full h-24">
         <Navbar />
       </div>
-      <div className="pt-40">
+      <div className="pt-5">
         <OurAboutContactHeader
           title={"Our pizzas"}
           description={
