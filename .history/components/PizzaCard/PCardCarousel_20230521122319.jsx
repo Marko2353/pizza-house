@@ -65,7 +65,7 @@ export default function PCardCarousel() {
       <div className="flex">{pizzaCards}</div>
     </div>
   </div>
-  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 mr-56">
+  <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
     <button
       className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
       onClick={scrollToNext}
