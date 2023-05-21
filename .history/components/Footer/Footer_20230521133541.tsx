@@ -10,7 +10,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
-import MapContainer from "./MapContainer";
 
 export default function Footer() {
   return (
@@ -107,9 +106,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4">Address</h3>
-          
-        </div>
+  <h3 className="mb-4">Address</h3>
+  <iframe
+    title="Map"
+    width="100%"
+    height="300"
+    frameBorder="0"
+    style={{ border: 0 }}
+    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAJo2JODiQ6DbWhnpVEiJJbjBWaMtVacG0`}
+    allowFullScreen
+  />
+</div>
+
       </div>
     </footer>
   );

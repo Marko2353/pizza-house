@@ -1,4 +1,5 @@
 import React from "react";
+
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
 import CallToAction from "../buttons/CallToAction";
@@ -10,7 +11,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
-import MapContainer from "./MapContainer";
 
 export default function Footer() {
   return (
@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          
+          <Image className="rounded-xl box-shadow" src={map} alt="" />
         </div>
       </div>
     </footer>

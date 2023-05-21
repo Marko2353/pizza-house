@@ -10,7 +10,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
-import MapContainer from "./MapContainer";
 
 export default function Footer() {
   return (
@@ -20,7 +19,7 @@ export default function Footer() {
           <h3 className="mb-4">Menu</h3>
           <ul className="uppercase flex flex-col gap-3">
             <li className="text-light">
-              <Link className="text-xs" href={"/"}>
+              <Link className="text-xs" href={"#"}>
                 home
               </Link>
             </li>
@@ -30,21 +29,21 @@ export default function Footer() {
               </Link>
             </li>
             <li className="text-light">
-              <Link className="text-xs" href={"/about"}>
+              <Link className="text-xs" href={"#"}>
                 about us
               </Link>
             </li>
             <li className="text-light">
-              <Link className="text-xs" href={"/contact"}>
+              <Link className="text-xs" href={"#"}>
                 contact us
               </Link>
             </li>
             <li className="text-sm">
-              <CallToAction name={"order takeaway"} link={"/takeaway"} />
+              <CallToAction name={"order takeaway"} link={"#"} />
             </li>
 
             <li className="text-sm">
-              <CallToAction name={"book a table"} link={"/booking"} />
+              <CallToAction name={"book a table"} link={"#"} />
             </li>
           </ul>
         </div>
@@ -53,7 +52,7 @@ export default function Footer() {
           <h3 className="mb-4">Social Media</h3>
           <ul className="flex flex-col gap-4">
             <li className="text-light">
-              <Link target="_blank" className="flex gap-3 items-center text-xs" href={"https://instagram.com/"}>
+              <Link className="flex gap-3 items-center text-xs" href={"#"}>
                 <FontAwesomeIcon
                   className="text-xl"
                   icon={faInstagram}
@@ -108,7 +107,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          
+          <Image className="rounded-xl box-shadow" src={map} alt="" />
         </div>
       </div>
     </footer>
