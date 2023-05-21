@@ -6,7 +6,7 @@ import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardContainer from "../components/PizzaCard/PCardContainer";
 import PCardCarousel from "../components/PizzaCard/PCardCarousel";
-import OurPizzas from "../components/OurPizzas/OurPizzas"
+import OurPizzas from "./ourpizza/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDragon } from "@fortawesome/free-solid-svg-icons";
 import AboutContact from "../components/AboutContact/AboutContact";
@@ -60,7 +60,6 @@ export default function Home() {
                   description={data.description[1]}
                   button={"contact us"}
                 />
-                <OurPizzas />
               </main>
               <Footer />
             </>

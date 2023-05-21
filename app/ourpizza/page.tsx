@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
-import PCardContainer from "../PizzaCard/PCardContainer";
+import PCardContainer from "../../components/PizzaCard/PCardContainer";
 import Image from "next/image";
 import PizzaImg from "../../public/img/our_pizzas.png";
+import Navbar from "../../components/Navbar/Navbar";
 
 function OurPizzas() {
   return (
@@ -19,7 +21,7 @@ function OurPizzas() {
         </p>
       </div>
       <div className="mb-16">
-      <PCardContainer />
+        <PCardContainer />
       </div>
     </>
   );
