@@ -61,7 +61,6 @@ export default function Home() {
                   button={"contact us"}
                 />
               </main>
-              <Footer />
             </>
           );
         })}

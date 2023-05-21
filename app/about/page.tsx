@@ -8,7 +8,7 @@ export default function About() {
       <div className="bg-dark w-full h-24">
         <Navbar />
       </div>
-      <section className="pt-40">
+      <section className="my-10">
         <OurAboutContactHeader
           title={"Our pizzas"}
           description={

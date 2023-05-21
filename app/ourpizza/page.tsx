@@ -7,10 +7,10 @@ import Navbar from "../../components/Navbar/Navbar";
 function OurPizzas() {
   return (
     <>
-      <div className="bg-dark w-full h-24">
+      <div className="bg-dark w-full h-24 flex static">
         <Navbar />
       </div>
-      <section className="pt-5">
+      <section className="my-10">
         <OurAboutContactHeader
           title={"Our pizzas"}
           description={

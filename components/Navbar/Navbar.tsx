@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Button from "../buttons/Button";
 import CallToAction from "../buttons/CallToAction";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
