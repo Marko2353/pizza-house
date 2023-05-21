@@ -1,5 +1,5 @@
 import React from "react";
-import PCardContainer from "../PizzaCard/PCardContainer";
+import PCardContainer from "../PizzaCard";
 import OurAboutContactHeader from "../OurAboutContactHeader/OurAboutContactHeader";
 
 function OurPizzas() {

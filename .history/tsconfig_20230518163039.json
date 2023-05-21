@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/PizzaCard/PCardCarousel.jsx", "components/PizzaCard/PCardContainer.jsx"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
