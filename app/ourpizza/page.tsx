@@ -3,20 +3,26 @@ import React from "react";
 import PCardContainer from "../../components/PizzaCard/PCardContainer";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import Navbar from "../../components/Navbar/Navbar";
+import Home from "../page";
+import fetchStatic from "../../hooks/fetchStatic";
 
 function OurPizzas() {
+  const { staticData } = fetchStatic();
+
   return (
     <>
       <div className="bg-dark w-full h-24 flex static">
         <Navbar />
       </div>
       <section className="my-10">
-        <OurAboutContactHeader
-          title={"Our pizzas"}
-          description={
-            "Lorem ipsum dolor sit amet consectetur. Amet auctor orci elementum consectetur felis libero massa ac rhoncus. Ultrices sem ut nulla nec.Cursus varius at tincidunt fringilla diam neque euismod odio dignissim. Sagittis vitae feugiat aliquet nisl i"
-          }
-        />
+        {staticData.map((data) => {
+          return (
+            <OurAboutContactHeader
+              title={data.title[3]}
+              description={data.description[3]}
+            />
+          );
+        })}
         <PCardContainer />
       </section>
     </>

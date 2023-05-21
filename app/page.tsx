@@ -12,25 +12,10 @@ import { faDragon } from "@fortawesome/free-solid-svg-icons";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
 import Footer from "../components/Footer/Footer";
+import fetchStatic from "../hooks/fetchStatic";
 
 export default function Home() {
-  const [staticData, setStaticData] = useState<{ [x: string]: any }[]>([]);
-
-  const dbInstance = collection(db, "static");
-
-  const getStatic = () => {
-    getDocs(dbInstance).then((data) => {
-      setStaticData(
-        data.docs.map((item) => {
-          return { ...item.data() };
-        })
-      );
-    });
-  };
-
-  useEffect(() => {
-    getStatic();
-  }, []);
+  const { staticData } = fetchStatic();
 
   return (
     <>
