@@ -15,8 +15,8 @@ export default function About() {
         {staticData.map((data) => {
           return (
             <OurAboutContactHeader
-              title={data.title[0]}
-              description={data.description[0]}
+              title={data.title[2]}
+              description={data.description[2]}
             />
           );
         })}

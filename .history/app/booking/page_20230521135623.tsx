@@ -4,19 +4,19 @@ import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import fetchStatic from "../../hooks/fetchStatic";
 
-export default function About() {
+export default function Booking() {
   const { staticData } = fetchStatic();
   return (
     <>
-      <div className="w-full h-24 bg-dark">
+      <div className="bg-dark w-full h-24">
         <Navbar />
       </div>
       <section className="my-10">
-        {staticData.map((data) => {
+      {staticData.map((data) => {
           return (
             <OurAboutContactHeader
-              title={data.title[0]}
-              description={data.description[0]}
+              title={data.title[3]}
+              description={data.description[3]}
             />
           );
         })}

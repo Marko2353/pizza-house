@@ -3,8 +3,9 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import fetchStatic from "../../hooks/fetchStatic";
+import Hours from "../../components/buttons/Hours";
 
-export default function About() {
+export default function Booking() {
   const { staticData } = fetchStatic();
   return (
     <>
@@ -12,14 +13,15 @@ export default function About() {
         <Navbar />
       </div>
       <section className="my-10">
-        {staticData.map((data) => {
+      {staticData.map((data) => {
           return (
             <OurAboutContactHeader
-              title={data.title[0]}
-              description={data.description[0]}
+              title={data.title[3]}
+              description={data.description[3]}
             />
           );
         })}
+
       </section>
     </>
   );

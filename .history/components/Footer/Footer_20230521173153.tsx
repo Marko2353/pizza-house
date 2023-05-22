@@ -10,6 +10,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import map from "../../public/img/map.jpg";
+import MapContainer from "./MapContainer";
 
 export default function Footer() {
   return (
@@ -107,7 +108,7 @@ export default function Footer() {
 
         <div>
           <h3 className="mb-4">Address</h3>
-          <Image className="rounded-xl box-shadow" src={map} alt="" />
+          <MapContainer />
         </div>
       </div>
     </footer>
