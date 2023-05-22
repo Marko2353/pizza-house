@@ -33,7 +33,7 @@ const BookingHours = () => {
             className={`p-3 ${
               eachHour === timeselected
                 ? "bg-secondary text-light font-bold rounded-xl"
-                : "bg-gray-200 rounded-xl"
+                : "bg-gray-200"
             }`}
             onClick={() => selectHour(eachHour)}
           >

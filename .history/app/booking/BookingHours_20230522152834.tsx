@@ -32,7 +32,7 @@ const BookingHours = () => {
             key={eachHour}
             className={`p-3 ${
               eachHour === timeselected
-                ? "bg-secondary text-light font-bold rounded-xl"
+                ? "bg-secondary text-light font-bold"
                 : "bg-gray-200 rounded-xl"
             }`}
             onClick={() => selectHour(eachHour)}
