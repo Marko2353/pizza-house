@@ -7,7 +7,7 @@ import BookingHours from "./BookingHours";
 import DateBooking from "./DateBooking"
 import { NumberGuest } from "./NumberGuest";
 import { BookingEmail } from "./BookingEmail";
-
+import BookingForm from "./BookingForm";
 export default function Booking() {
   const { staticData } = fetchStatic();
   return (
@@ -33,7 +33,7 @@ export default function Booking() {
         <h2 className='py-10'>Contact email:</h2>
         <BookingEmail />
         </div>
-
+<BookingForm />
 
       </section>
     </>

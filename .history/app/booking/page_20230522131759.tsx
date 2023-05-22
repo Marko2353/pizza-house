@@ -3,10 +3,8 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import fetchStatic from "../../hooks/fetchStatic";
-import BookingHours from "./BookingHours";
-import DateBooking from "./DateBooking"
-import { NumberGuest } from "./NumberGuest";
-import { BookingEmail } from "./BookingEmail";
+import BookingHours from "../../components/buttons/BookingHours";
+import DateBookin
 
 export default function Booking() {
   const { staticData } = fetchStatic();
@@ -24,16 +22,7 @@ export default function Booking() {
             />
           );
         })}
-        <div className="container mx-auto">
-        <h2 className='py-10'>Select a date/hour for booking a table:</h2>
-        <DateBooking />
-        <BookingHours />
-        <h2 className='py-10'>Number of guest:</h2>
-        <NumberGuest />
-        <h2 className='py-10'>Contact email:</h2>
-        <BookingEmail />
-        </div>
-
+<BookingHours />
 
       </section>
     </>

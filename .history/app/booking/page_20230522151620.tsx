@@ -7,7 +7,7 @@ import BookingHours from "./BookingHours";
 import DateBooking from "./DateBooking"
 import { NumberGuest } from "./NumberGuest";
 import { BookingEmail } from "./BookingEmail";
-
+import BookingForm from "./BookingForm";
 export default function Booking() {
   const { staticData } = fetchStatic();
   return (
