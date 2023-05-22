@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
@@ -9,11 +9,9 @@ export default function Booking() {
   const { staticData } = fetchStatic();
   return (
     <>
-      <div className="w-full h-24 bg-dark">
-        <Navbar />
-      </div>
+      <Navbar background={"bg-dark relative mb-10"} />
       <section className="my-10">
-      {staticData.map((data) => {
+        {staticData.map((data) => {
           return (
             <OurAboutContactHeader
               title={data.title[3]}
@@ -21,7 +19,7 @@ export default function Booking() {
             />
           );
         })}
-<BookingHours />
+        <BookingHours />
       </section>
     </>
   );

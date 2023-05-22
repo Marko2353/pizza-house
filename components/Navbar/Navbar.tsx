@@ -2,11 +2,11 @@ import CallToAction from "../buttons/CallToAction";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-export default function NavBar() {
+export default function NavBar({background}) {
   // const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full h-24 flex absolute z-50">
+    <nav className={`w-full h-24 flex absolute z-50 ${background}`}>
       <div className="container m-auto flex justify-between items-center">
         <Link href={"/"}>
           <Image src={Logo} alt="" />

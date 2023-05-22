@@ -9,7 +9,7 @@ export default function BookStatic({ title, description, button }) {
       <Image className="rounded-xl box-shadow" src={BookImg} alt="" />
       <div>
         <h2>{title}</h2>
-        <p className="my-5 w-[60ch]">{description}</p>
+        <p className="my-5 w-[75ch]">{description}</p>
         <Button name={button} link={"#"} />
       </div>
     </section>

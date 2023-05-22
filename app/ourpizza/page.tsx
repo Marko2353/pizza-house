@@ -11,10 +11,8 @@ function OurPizzas() {
 
   return (
     <>
-      <div className="bg-dark w-full h-24 flex static">
-        <Navbar />
-      </div>
-      <section className="my-10">
+      <Navbar background={"bg-dark relative mb-10"} />
+      <section className="mb-10">
         {staticData.map((data) => {
           return (
             <OurAboutContactHeader

@@ -10,7 +10,7 @@ function OurPizzas({ title, description }) {
           <h1>{title}</h1>
           <Image src={PizzaImg} alt="" />
         </div>
-        <p className="mx-auto w-[60ch] text-center my-16">{description}</p>
+        <p className="mx-auto w-[75ch] text-center my-16">{description}</p>
       </section>
     </>
   );

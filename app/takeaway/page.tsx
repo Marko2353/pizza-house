@@ -3,14 +3,13 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import fetchStatic from "../../hooks/fetchStatic";
+import PCardContainer from "../../components/PizzaCard/PCardContainer";
 
 export default function Takeaway() {
   const { staticData } = fetchStatic();
   return (
     <>
-      <div className="bg-dark w-full h-24">
-        <Navbar />
-      </div>
+      <Navbar background={"bg-dark relative mb-10"} />
       <section className="my-10">
         {staticData.map((data) => {
           return (
@@ -20,6 +19,12 @@ export default function Takeaway() {
             />
           );
         })}
+        <div className="container m-auto flex">
+          <PCardContainer />
+          <div className="bg-dark text-light">
+            <p className="w-64 h-64">aasdasf</p>
+          </div>
+        </div>
       </section>
     </>
   );

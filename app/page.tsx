@@ -23,7 +23,7 @@ export default function Home() {
         {staticData.map((data) => {
           return (
             <>
-              <NavBar />
+              <NavBar background={undefined} />
               <DailyPizza />
               <main>
                 <AboutContact
