@@ -35,19 +35,15 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validar que todos los campos estén completos
-    if (formData.selectedDate && formData.selectedHour && formData.email) {
-      // Guardar los datos en el local storage
-      localStorage.setItem('bookingData', JSON.stringify(formData));
-      setFormSubmitted(true);
-    }
+    // Guardar los datos en el local storage
+    localStorage.setItem('bookingData', JSON.stringify(formData));
+    setFormSubmitted(true);
   };
 
   return (
     <>
       <Navbar background={'bg-dark relative mb-10'} />
       <section className="max-w-4xl mx-auto my-10 ">
-        
         <OurAboutContactHeader title="Booking" description="Reserve a table" />
 
         <form onSubmit={handleSubmit}>
@@ -71,10 +67,10 @@ export default function Booking() {
           <p className="mt-4">
             Booking details:
             <br />
-            Date: {formData.selectedDate.toString()}
+            Date: {formData.selectedDate}
             <br />
             Hour: {formData.selectedHour}
-            <br />
+            <br />  
             Number of Guests: {formData.numberOfGuests}
             <br />
             Email: {formData.email}

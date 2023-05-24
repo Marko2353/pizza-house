@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const BookingEmail = ({ email, onEmailChange }) => {
+export const BookingEmail = () => {
+  const [email, setEmail] = useState('');
+
   const handleEmailChange = (e) => {
-    onEmailChange(e.target.value);
+    setEmail(e.target.value);
   };
 
   return (
@@ -10,7 +12,7 @@ export const BookingEmail = ({ email, onEmailChange }) => {
       <input
         id="email-input"
         type="email"
-        placeholder="name@email.com"
+        placeholder='name@email.com'
         value={email}
         onChange={handleEmailChange}
         className="w-1/4 px-4 py-3 text-lg font-semibold border rounded-xl"

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const NumberGuest = ({ numberOfGuests, onNumberOfGuestsChange }) => {
+export const NumberGuest = () => {
+  const [numberOfGuests, setNumberOfGuests] = useState(1);
+
   const handleNumberChange = (e) => {
     const value = parseInt(e.target.value);
     if (value >= 1 && value <= 10) {
-      onNumberOfGuestsChange(value);
+      setNumberOfGuests(value);
     }
   };
 
@@ -17,8 +19,11 @@ export const NumberGuest = ({ numberOfGuests, onNumberOfGuestsChange }) => {
         max="10"
         value={numberOfGuests}
         onChange={handleNumberChange}
-        className="w-1/6 px-4 py-3 text-lg font-semibold border rounded-xl"
+        className="w-1/6 px-4 py-3 text-xl font-semibold border rounded-xl"
+        
+    
       />
     </div>
   );
 };
+
