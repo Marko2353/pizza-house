@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import PizzaCard from "./PizzaCard";
 import useFetchPizzas from "../../hooks/fetchPizzas";
