@@ -22,7 +22,7 @@ export default function useFetchPizzas() {
           setDescriptions(descFetched.data());
         }
       } catch (err) {
-        setError("Failed to load Pizzas!");
+        setError(err);
       } finally {
         setLoading(false);
       }

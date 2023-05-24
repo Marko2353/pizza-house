@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 import { collection, addDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
@@ -8,13 +9,22 @@ import DateBooking from './DateBooking';
 import { NumberGuest } from './NumberGuest';
 import { BookingEmail } from './BookingEmail';
 import { db } from '../../firebase';
+=======
+import React, { useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
+import BookingHours from "./BookingHours";
+import DateBooking from "./DateBooking";
+import { NumberGuest } from "./NumberGuest";
+import { BookingEmail } from "./BookingEmail";
+>>>>>>> 9fc04aea0ffd556379a3cf9b8bdec9fd5a958951
 
 export default function Booking() {
   const [formData, setFormData] = useState({
     selectedDate: new Date(),
     selectedHour: null,
     numberOfGuests: 1,
-    email: '',
+    email: "",
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -39,6 +49,7 @@ export default function Booking() {
     e.preventDefault();
     // Validar que todos los campos estén completos
     if (formData.selectedDate && formData.selectedHour && formData.email) {
+<<<<<<< HEAD
       localStorage.setItem('bookingData', JSON.stringify(formData));
       // Subir los datos a Firebase Firestore
       addDoc(collection(db, 'bookings'), formData)
@@ -48,33 +59,52 @@ export default function Booking() {
         .catch((error) => {
           console.error('Error adding document: ', error);
         });
+=======
+      // Guardar los datos en el local storage
+      localStorage.setItem("bookingData", JSON.stringify(formData));
+      setFormSubmitted(true);
+>>>>>>> 9fc04aea0ffd556379a3cf9b8bdec9fd5a958951
     }
   };
 
   return (
     <>
-      <Navbar background={'bg-dark relative mb-10'} />
+      <Navbar background={"bg-dark relative mb-10"} />
       <section className="max-w-4xl mx-auto my-10 ">
         <OurAboutContactHeader title="Booking" description="Reserve a table" />
 
         <form onSubmit={handleSubmit}>
-          <h3 className="pt-10 pb-5">Select a date/hour for booking a table:</h3>
-          <DateBooking selectedDate={formData.selectedDate} onDateChange={handleDateChange} />
-          <BookingHours selectedHour={formData.selectedHour} onHourChange={handleHourChange} />
+          <h3 className="pt-10 pb-5">
+            Select a date/hour for booking a table:
+          </h3>
+          <DateBooking
+            selectedDate={formData.selectedDate}
+            onDateChange={handleDateChange}
+          />
+          <BookingHours
+            selectedHour={formData.selectedHour}
+            onHourChange={handleHourChange}
+          />
           <h3 className="pt-10 pb-5">Number of guests:</h3>
           <NumberGuest
             numberOfGuests={formData.numberOfGuests}
             onNumberOfGuestsChange={handleNumberOfGuestsChange}
           />
           <h3 className="pt-10 pb-5">Contact email:</h3>
-          <BookingEmail email={formData.email} onEmailChange={handleEmailChange} />
+          <BookingEmail
+            email={formData.email}
+            onEmailChange={handleEmailChange}
+          />
 
-          <button type="submit" className="px-4 py-2 mt-5 text-white rounded-md bg-primary">
+          <button
+            type="submit"
+            className="px-4 py-2 mt-5 text-white rounded-md bg-primary"
+          >
             Submit
           </button>
         </form>
 
-        {formSubmitted && (
+        {/* {formSubmitted && (
           <p className="mt-4">
             Booking details:
             <br />
@@ -86,7 +116,7 @@ export default function Booking() {
             <br />
             Email: {formData.email}
           </p>
-        )}
+        )} */}
       </section>
     </>
   );

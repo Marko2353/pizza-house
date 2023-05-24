@@ -16,12 +16,13 @@ export default function PCardContainer() {
   return (
     <div className="container flex flex-wrap gap-4 m-auto">
       <>
-        {Object.keys(pizzas).map((pizzaId) => {
+        {Object.keys(pizzas).map((pizzaId, key) => {
           const pizzaName = pizzas[pizzaId];
           const pizzaDescription = descriptions[pizzaId];
 
           return (
             <PizzaCard
+              key={key}
               pizzaName={pizzaName}
               pizzaDescription={pizzaDescription}
             />

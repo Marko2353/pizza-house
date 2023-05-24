@@ -46,34 +46,33 @@ export default function PCardCarousel() {
   });
 
   return (
-<section className="relative py-10 m-auto bg-dark">
-  <h1 className="text-center">Our pizzas</h1>
-  <p className="w-[60ch] mx-auto my-5 text-center text-light">
-    Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
-    pellentesque amet non. Pellentesque aliquam
-  </p>
-  <div className="absolute ml-56 transform -translate-y-1/2 left-4 top-1/2">
-    <button
-      className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
-      onClick={scrollToPrevious}
-    >
-      <Image src={Arrow} alt="" />
-    </button>
-  </div>
-  <div className="container relative w-2/4 mx-auto">
-    <div className="flex overflow-x-hidden" ref={carouselRef}>
-      <div className="flex">{pizzaCards}</div>
-    </div>
-  </div>
-  <div className="absolute mr-56 transform -translate-y-1/2 right-4 top-1/2">
-    <button
-      className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
-      onClick={scrollToNext}
-    >
-      <Image src={Arrow} alt="" className="transform rotate-180" />
-    </button>
-  </div>
-</section>
-
+    <section className="relative py-10 m-auto bg-dark">
+      <h1 className="text-center">Our pizzas</h1>
+      <p className="w-[60ch] mx-auto my-5 text-center text-light">
+        Lorem ipsum dolor sit amet consectetur. Consectetur donec maecenas nisl
+        pellentesque amet non. Pellentesque aliquam
+      </p>
+      <div className="absolute ml-56 transform -translate-y-1/2 left-4 top-1/2">
+        <button
+          className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+          onClick={scrollToPrevious}
+        >
+          <Image src={Arrow} alt="" />
+        </button>
+      </div>
+      <div className="container relative w-2/4 mx-auto">
+        <div className="flex overflow-x-hidden" ref={carouselRef}>
+          <div className="flex">{pizzaCards}</div>
+        </div>
+      </div>
+      <div className="absolute mr-56 transform -translate-y-1/2 right-4 top-1/2">
+        <button
+          className="p-2 rounded-full bg-dark hover:bg-gray-400 focus:outline-none"
+          onClick={scrollToNext}
+        >
+          <Image src={Arrow} alt="" className="transform rotate-180" />
+        </button>
+      </div>
+    </section>
   );
 }
