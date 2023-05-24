@@ -19,7 +19,7 @@ export const NumberGuest = () => {
         max="10"
         value={numberOfGuests}
         onChange={handleNumberChange}
-        className="w-1/6 px-4 py-3 text-xl font-semibold border rounded-md rounded-xl"
+        className="w-1/6 px-4 py-3 text-xl font-semibold border rounded-xl"
         
     
       />
