@@ -5,7 +5,6 @@ import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardCarousel from "../components/PizzaCard/PCardCarousel";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
-import Footer from "../components/Footer/Footer";
 import fetchStatic from "../hooks/fetchStatic";
 
 export default function Home() {
