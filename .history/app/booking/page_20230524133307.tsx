@@ -1,5 +1,4 @@
 "use client";
-import { collection, addDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import OurAboutContactHeader from '../../components/OurAboutContactHeader/OurAboutContactHeader';
@@ -7,7 +6,6 @@ import BookingHours from './BookingHours';
 import DateBooking from './DateBooking';
 import { NumberGuest } from './NumberGuest';
 import { BookingEmail } from './BookingEmail';
-import { db } from '../../firebase';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
@@ -37,18 +35,11 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // Validar que todos los campos estén completos
     if (formData.selectedDate && formData.selectedHour && formData.email) {
+      // Guardar los datos en el local storage
       localStorage.setItem('bookingData', JSON.stringify(formData));
-    
-      addDoc(collection(db, 'bookings'), formData)
-        .then(() => {
-          setFormSubmitted(true);
-        })
-        .catch((error) => {
-          console.error('Error: ', error);
-        });
-    }
+      setFormSubmitted(true);
   };
 
   return (

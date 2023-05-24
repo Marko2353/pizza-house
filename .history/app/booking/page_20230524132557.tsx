@@ -1,23 +1,29 @@
 "use client";
-import { collection, addDoc } from 'firebase/firestore';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import OurAboutContactHeader from '../../components/OurAboutContactHeader/OurAboutContactHeader';
 import BookingHours from './BookingHours';
 import DateBooking from './DateBooking';
 import { NumberGuest } from './NumberGuest';
 import { BookingEmail } from './BookingEmail';
-import { db } from '../../firebase';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    selectedDate: new Date(),
+    selectedDate: null,
     selectedHour: null,
     numberOfGuests: 1,
     email: '',
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('bookingData');
+    if (storedData) {
+      setFormData(JSON.parse(storedData));
+      setFormSubmitted(true);
+    }
+  }, []);
 
   const handleDateChange = (date) => {
     setFormData({ ...formData, selectedDate: date });
@@ -37,20 +43,37 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Aquí puedes realizar cualquier validación adicional antes de enviar el formulario
 
-    if (formData.selectedDate && formData.selectedHour && formData.email) {
-      localStorage.setItem('bookingData', JSON.stringify(formData));
-    
-      addDoc(collection(db, 'bookings'), formData)
-        .then(() => {
-          setFormSubmitted(true);
-        })
-        .catch((error) => {
-          console.error('Error: ', error);
-        });
-    }
+    // Guardar los datos en el local storage
+    localStorage.setItem('bookingData', JSON.stringify(formData));
+    setFormSubmitted(true);
   };
 
+  if (formSubmitted) {
+    return (
+      <>
+        <Navbar background={'bg-dark relative mb-10'} />
+        <section className="max-w-4xl mx-auto my-10 ">
+          <OurAboutContactHeader title="Booking" description="Reserve a table" />
+
+          <p className="mt-4">
+            Booking details:
+            <br />
+            Date: {formData.selectedDate.toString()}
+            <br />
+            Hour: {formData.selectedHour}
+            <br />
+            Number of Guests: {formData.numberOfGuests}
+            <br />
+            Email: {formData.email}
+          </p>
+        </section>
+      </>
+    );
+  }
+
+  // Si no se ha enviado el formulario y no hay datos en el localStorage, muestra el formulario
   return (
     <>
       <Navbar background={'bg-dark relative mb-10'} />
@@ -69,24 +92,10 @@ export default function Booking() {
           <h3 className="pt-10 pb-5">Contact email:</h3>
           <BookingEmail email={formData.email} onEmailChange={handleEmailChange} />
 
-          <button type="submit" className="px-4 py-2 mt-5 text-white rounded-md bg-primary">
+          <button type="submit" className="mt-8 btn-primary" disabled={!formData.selectedDate || !formData.selectedHour || !formData.email}>
             Submit
           </button>
         </form>
-
-        {formSubmitted && (
-          <p className="mt-4">
-            Booking details:
-            <br />
-            Date: {formData.selectedDate.toString()}
-            <br />
-            Hour: {formData.selectedHour}
-            <br />
-            Number of Guests: {formData.numberOfGuests}
-            <br />
-            Email: {formData.email}
-          </p>
-        )}
       </section>
     </>
   );

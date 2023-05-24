@@ -37,16 +37,15 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // Validar que todos los campos estén completos
     if (formData.selectedDate && formData.selectedHour && formData.email) {
-      localStorage.setItem('bookingData', JSON.stringify(formData));
-    
+      // Subir los datos a Firebase Firestore
       addDoc(collection(db, 'bookings'), formData)
         .then(() => {
           setFormSubmitted(true);
         })
         .catch((error) => {
-          console.error('Error: ', error);
+          console.error('Error adding document: ', error);
         });
     }
   };
@@ -74,19 +73,7 @@ export default function Booking() {
           </button>
         </form>
 
-        {formSubmitted && (
-          <p className="mt-4">
-            Booking details:
-            <br />
-            Date: {formData.selectedDate.toString()}
-            <br />
-            Hour: {formData.selectedHour}
-            <br />
-            Number of Guests: {formData.numberOfGuests}
-            <br />
-            Email: {formData.email}
-          </p>
-        )}
+        {formSubmitted && <p>Booking submitted successfully!</p>}
       </section>
     </>
   );

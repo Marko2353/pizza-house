@@ -7,11 +7,11 @@ import BookingHours from './BookingHours';
 import DateBooking from './DateBooking';
 import { NumberGuest } from './NumberGuest';
 import { BookingEmail } from './BookingEmail';
-import { db } from '../../firebase';
+import { db } from '../firebase';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    selectedDate: new Date(),
+    selectedDate: null,
     selectedHour: null,
     numberOfGuests: 1,
     email: '',
@@ -37,16 +37,15 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // Validar que todos los campos estén completos
     if (formData.selectedDate && formData.selectedHour && formData.email) {
-      localStorage.setItem('bookingData', JSON.stringify(formData));
-    
+      // Subir los datos a Firebase Firestore
       addDoc(collection(db, 'bookings'), formData)
         .then(() => {
           setFormSubmitted(true);
         })
         .catch((error) => {
-          console.error('Error: ', error);
+          console.error('Error adding document: ', error);
         });
     }
   };
@@ -58,35 +57,13 @@ export default function Booking() {
         <OurAboutContactHeader title="Booking" description="Reserve a table" />
 
         <form onSubmit={handleSubmit}>
-          <h3 className="pt-10 pb-5">Select a date/hour for booking a table:</h3>
-          <DateBooking selectedDate={formData.selectedDate} onDateChange={handleDateChange} />
-          <BookingHours selectedHour={formData.selectedHour} onHourChange={handleHourChange} />
-          <h3 className="pt-10 pb-5">Number of guests:</h3>
-          <NumberGuest
-            numberOfGuests={formData.numberOfGuests}
-            onNumberOfGuestsChange={handleNumberOfGuestsChange}
-          />
-          <h3 className="pt-10 pb-5">Contact email:</h3>
-          <BookingEmail email={formData.email} onEmailChange={handleEmailChange} />
-
-          <button type="submit" className="px-4 py-2 mt-5 text-white rounded-md bg-primary">
+          {/* Resto del formulario */}
+          <button type="submit" className="mt-8 btn-primary" disabled={!formData.selectedDate || !formData.selectedHour || !formData.email}>
             Submit
           </button>
         </form>
 
-        {formSubmitted && (
-          <p className="mt-4">
-            Booking details:
-            <br />
-            Date: {formData.selectedDate.toString()}
-            <br />
-            Hour: {formData.selectedHour}
-            <br />
-            Number of Guests: {formData.numberOfGuests}
-            <br />
-            Email: {formData.email}
-          </p>
-        )}
+        {formSubmitted && <p>Booking submitted successfully!</p>}
       </section>
     </>
   );
