@@ -26,6 +26,6 @@
     "**/*.ts",
     "**/*.tsx",
     "app/ourpizza/page.jsx"
-  ],
+, "components/Footer/MapContainer.jsx"  ],
   "exclude": ["node_modules"]
 }
