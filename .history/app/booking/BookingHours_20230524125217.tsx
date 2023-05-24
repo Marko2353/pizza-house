@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookingHours = ({ selectedHour, onHourChange }) => {
   const generateHours = () => {
-    const arrayHours: string[] = [];
+    const arrayHours = [];
     const startHour = 18;
     const startMinutes = ['00', '30'];
 

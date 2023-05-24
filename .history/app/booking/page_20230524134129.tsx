@@ -11,7 +11,7 @@ import { db } from '../../firebase';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    selectedDate: new Date(),
+    selectedDate: null,
     selectedHour: null,
     numberOfGuests: 1,
     email: '',
@@ -39,7 +39,6 @@ export default function Booking() {
     e.preventDefault();
     // Validar que todos los campos estén completos
     if (formData.selectedDate && formData.selectedHour && formData.email) {
-      localStorage.setItem('bookingData', JSON.stringify(formData));
       // Subir los datos a Firebase Firestore
       addDoc(collection(db, 'bookings'), formData)
         .then(() => {
@@ -74,19 +73,7 @@ export default function Booking() {
           </button>
         </form>
 
-        {formSubmitted && (
-          <p className="mt-4">
-            Booking details:
-            <br />
-            Date: {formData.selectedDate.toString()}
-            <br />
-            Hour: {formData.selectedHour}
-            <br />
-            Number of Guests: {formData.numberOfGuests}
-            <br />
-            Email: {formData.email}
-          </p>
-        )}
+        {formSubmitted && <p>Booking submitted successfully!</p>}
       </section>
     </>
   );

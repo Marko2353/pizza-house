@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default function DateBooking({ selectedDate, onDateChange }) {
+export default function DateBooking({ onDateChange }) {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const handleDateChange = (date) => {
+    setSelectedDate(date);
     onDateChange(date);
   };
 

@@ -6,6 +6,7 @@ export default function DateBooking({ selectedDate, onDateChange }) {
   const handleDateChange = (date) => {
     onDateChange(date);
   };
+  selectedDate=new Date();
 
   const customInputStyle =
     'w-1/3 px-4 py-3 border rounded-md text-lg font-bold rounded-xl';
