@@ -11,9 +11,10 @@ export default function Takeaway() {
     <>
       <Navbar background={"bg-dark relative mb-10"} />
       <section className="my-10">
-        {staticData.map((data) => {
+        {staticData.map((data, key) => {
           return (
             <OurAboutContactHeader
+              key={key}
               title={data.title[3]}
               description={data.description[3]}
             />
