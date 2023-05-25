@@ -19,7 +19,7 @@ async function OurPizzas() {
           description={docData?.description[3]}
         />
 
-        <PCardContainer />
+        {/* <PCardContainer /> */}
       </section>
     </>
   );

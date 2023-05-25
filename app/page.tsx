@@ -24,7 +24,7 @@ export default async function Home() {
           description={docData?.description[2]}
           button={"book now"}
         />
-        <PCardCarousel />
+        {/* <PCardCarousel /> */}
         <AboutContact
           title={docData?.title[1]}
           description={docData?.description[1]}
