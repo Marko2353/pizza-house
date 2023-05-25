@@ -1,9 +1,7 @@
 import React from "react";
-// import PCardContainer from "../../components/PizzaCard/PCardContainer";
+import PCardContainer from "../../components/PizzaCard/PCardContainer";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import Navbar from "../../components/Navbar/Navbar";
-import Home from "../page";
-import fetchStatic from "../../hooks/fetchStatic";
 import fetchData from "../../hooks/fetchData";
 
 async function OurPizzas() {
@@ -18,7 +16,7 @@ async function OurPizzas() {
           description={docData?.description[3]}
         />
 
-        {/* <PCardContainer /> */}
+        <PCardContainer />
       </section>
     </>
   );

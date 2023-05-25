@@ -1,9 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
-import fetchStatic from "../../hooks/fetchStatic";
-// import PCardContainer from "../../components/PizzaCard/PCardContainer";
 import fetchData from "../../hooks/fetchData";
+import PCardContainer from "../../components/PizzaCard/PCardContainer";
 
 export default async function Takeaway() {
   const { docData } = await fetchData("static", "landing");
@@ -17,7 +16,7 @@ export default async function Takeaway() {
         />
 
         <div className="container m-auto flex">
-          {/* <PCardContainer /> */}
+          <PCardContainer />
           <div className="bg-dark text-light">
             <p className="w-64 h-64">aasdasf</p>
           </div>

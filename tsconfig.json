@@ -25,7 +25,9 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/ourpizza/page.jsx"
-, "components/Footer/MapContainer.jsx"  ],
+    "app/ourpizza/page.jsx",
+    "components/Footer/MapContainer.jsx",
+    "components/PizzaCard/PCardCarousel.jsx"
+  ],
   "exclude": ["node_modules"]
 }

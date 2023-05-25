@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
-import fetchStatic from "../../hooks/fetchStatic";
 import AboutSection from "../../components/AboutSection/AboutSection";
 import fetchData from "../../hooks/fetchData";
 
