@@ -27,7 +27,8 @@
     "**/*.tsx",
     "app/ourpizza/page.jsx",
     "components/Footer/MapContainer.jsx",
-    "components/PizzaCard/PCardCarousel.jsx"
+    "components/PizzaCard/PCardCarousel.jsx",
+    "components/PizzaCard/PCardContainer.jsx"
   ],
   "exclude": ["node_modules"]
 }
