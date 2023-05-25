@@ -1,6 +1,5 @@
-
 import React from "react";
-import PCardContainer from "../../components/PizzaCard/PCardContainer";
+// import PCardContainer from "../../components/PizzaCard/PCardContainer";
 import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
 import Navbar from "../../components/Navbar/Navbar";
 import Home from "../page";
