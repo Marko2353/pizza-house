@@ -66,4 +66,37 @@ h4 {
     background-color: rgb(0, 0, 0, .5);
     @apply absolute w-full h-full z-10 top-0 left-0;
   }
+
+  .loader {
+    position: fixed;
+    background-color: #f5f5f5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader::after {
+    content: '';
+    width: 75px;
+    height: 75px;
+    border: 15px solid #333333;
+    border-top-color: #FF6F00;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+  }
+
+
+  @keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
 }
