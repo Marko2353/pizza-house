@@ -2,9 +2,11 @@ import CallToAction from "../buttons/CallToAction";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import router, { useRouter } from 'next/router';
+
 export default function NavBar({background}) {
   // const [navbar, setNavbar] = useState(false);
-  
+  const currentRoute = router.pathname;
 
   return (
     <nav className={`w-full h-24 flex absolute z-50 ${background}`}>
@@ -13,7 +15,12 @@ export default function NavBar({background}) {
           <Image src={Logo} alt="" />
         </Link>
         <ul className="flex items-center gap-5 uppercase text-light">
-          <li className="hover:text-secondary">
+
+        currentRoute === "/some-path" 
+       ? "active-class-name" 
+       : "non-active-class-name"}
+
+          <li className={currentRoute === "/" ? "text-secondary" : "hover:text-secondary"}>
             <Link href={"/"}>home</Link>
           </li>
           <li className="hover:text-secondary">

@@ -107,11 +107,11 @@ export default function Booking() {
             Select a date/hour for booking a table:
           </h3>
           <DateBooking
-            selectedDate={formData.selectedDate}
+            selectedDate={updatedFormData.selectedDate}
             onDateChange={handleDateChange}
           />
           <BookingHours
-            selectedHour={formData.selectedHour}
+            selectedHour={updatedFormData.selectedHour}
             onHourChange={handleHourChange}
           />
           <h3 className="pt-10 pb-5">Number of guests:</h3>
@@ -134,18 +134,39 @@ export default function Booking() {
         </form>
         </>
      ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
+          <>
+          <section>
+            
+            <button
+              onClick={handleDelete}
+              className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+            >
+              Delete Reservation
+            </button>
+            <h2 className="mt-4">Booking Details: </h2>
+            <p>{bookingData}</p>
+    <table className="mt-2">
+      <tbody>
+        <tr>
+          <th>Date:</th>
+          <td>{bookingData}</td>
+        </tr>
+        <tr>
+          <th>Hour:</th>
+          <td>{bookingData.selectedHour}</td>
+        </tr>
+        <tr>
+          <th>Number of Guests:</th>
+          <td>{bookingData.numberOfGuests}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{bookingData.email}</td>
+        </tr>
+      </tbody>
+    </table>
+            </section>
+          </>
      )}
       </section>
     </>

@@ -134,18 +134,44 @@ export default function Booking() {
         </form>
         </>
      ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
+          <>
+          <section>
+            
+            <button
+              onClick={handleDelete}
+              className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+            >
+              Delete Reservation
+            </button>
+            <h2 className="mt-4">Booking Details: </h2>
+            <p>{bookingData}</p>
+            <h2>Booking Details:</h2>
+            <table className="mt-2">
+      <tbody>
+        {bookingData.map((booking, index) => (
+          <tr key={index}>
+            <th>Date:</th>
+            <td>{booking.selectedDate}</td>
+          </tr>
+          <tr>
+            <th>Hour:</th>
+            <td>{booking.selectedHour}</td>
+          </tr>
+          <tr>
+            <th>Number of Guests:</th>
+            <td>{booking.numberOfGuests}</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td>{booking.email}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+            
+
+            </section>
+          </>
      )}
       </section>
     </>

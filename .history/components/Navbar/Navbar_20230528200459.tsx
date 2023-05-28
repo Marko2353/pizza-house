@@ -2,9 +2,11 @@ import CallToAction from "../buttons/CallToAction";
 import Logo from "../../public/img/Logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import router, { useRouter } from 'next/router';
+
 export default function NavBar({background}) {
   // const [navbar, setNavbar] = useState(false);
-  
+  const currentRoute = router.pathname;
 
   return (
     <nav className={`w-full h-24 flex absolute z-50 ${background}`}>

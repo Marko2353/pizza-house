@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 export default function NavBar({background}) {
   // const [navbar, setNavbar] = useState(false);
-  
 
   return (
     <nav className={`w-full h-24 flex absolute z-50 ${background}`}>

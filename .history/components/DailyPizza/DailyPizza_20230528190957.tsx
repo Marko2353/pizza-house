@@ -1,19 +1,20 @@
+import React from "react";
 import CallToAction from "../buttons/CallToAction";
 import fetchData from "../../hooks/fetchData";
 
 async function DailyPizza() {
 
-  const xnumber = Math.floor(Math.random() * 10);
-  const { docData } = await fetchData("pizzas", "pizza");
+  const { docData } = await fetchData("static", "landing");
 
   return (
     <section className="responsive-image">
       <span className="z-20 text-lg uppercase text-light w-fit">
-        the pizza of the day  {xnumber}
+        the pizza of the day
       </span>
-      <h1 className="z-20 mt-4 text-6xl w-fit">{docData?.title[xnumber]}</h1>
+      <h1 className="z-20 mt-4 text-6xl w-fit">Margharita</h1>
       <p className="text-light w-[60ch] z-20 mb-8 mt-8 text-center">
-      {docData?.info[xnumber]}
+        Introducing our Pizza of the Day: Margherita! A classic blend of tangy
+        tomato sauce, creamy mozzarella, and aromatic basil. Delizioso!
       </p>
       <span className="z-30 text-lg">
         <CallToAction name="order now" link="#" />

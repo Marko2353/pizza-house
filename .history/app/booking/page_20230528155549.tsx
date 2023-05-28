@@ -20,7 +20,7 @@ export default function Booking() {
     email: '',
   });
 
-  let updatedFormData = {};
+
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [bookingData, setBookingData] = useState(() => {
@@ -48,27 +48,25 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (formData.selectedDate && formData.selectedHour && formData.email) {
       const reservationId = generateId();
-      //setFormData({ ...formData, reservationId: reservationId });
-      updatedFormData = { ...formData, reservationId };
-  
+      setFormData({ ...formData, reservationId: reservationId });
       if (typeof window !== 'undefined') {
-        localStorage.setItem('bookingData', JSON.stringify(updatedFormData));
+        
+        localStorage.setItem('bookingData', JSON.stringify(formData));
       }
-  
-      setDoc(doc(db, 'bookings', reservationId), updatedFormData)
-        .then(() => {
-          setFormSubmitted(true);
-          window.location.reload();
-        })
+    
+      setDoc(doc(db, 'bookings', reservationId), { ...formData, reservationId })
+      .then(() => {
+        setFormSubmitted(true);
+        window.location.reload()
+      })
         .catch((error) => {
           console.error('Error: ', error);
         });
     }
   };
-  
 
 
   const handleDelete = () => {
@@ -86,7 +84,6 @@ export default function Booking() {
           numberOfGuests: 1,
           email: '',
         });
-        window.location.reload();
       })
       .catch((error) => {
         console.error('Error deleting document: ', error);
@@ -134,18 +131,28 @@ export default function Booking() {
         </form>
         </>
      ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
+          <>
+          
+            <button
+              onClick={handleDelete}
+              className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+            >
+              Delete Reservation
+            </button>
+            <p className="mt-4">
+              {bookingData}
+            
+              Booking details:
+              <br />
+              Date: {formData.selectedDate.toString()}
+              <br />
+              Hour: {formData.selectedHour}
+              <br />
+              Number of Guests: {formData.numberOfGuests}
+              <br />
+              Email: {formData.email}
+            </p>
+          </>
      )}
       </section>
     </>

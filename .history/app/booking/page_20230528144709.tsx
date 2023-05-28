@@ -1,5 +1,5 @@
 "use client";
-import { collection, addDoc, setDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { deleteDoc, doc } from "firebase/firestore";
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
@@ -9,26 +9,19 @@ import DateBooking from './DateBooking';
 import { NumberGuest } from './NumberGuest';
 import { BookingEmail } from './BookingEmail';
 import { db } from '../../firebase';
-import generateId from './generateId';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    reservationId: '',
     selectedDate: new Date(),
     selectedHour: null,
     numberOfGuests: 1,
     email: '',
   });
 
-  let updatedFormData = {};
-
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [bookingData, setBookingData] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('bookingData');
-    }
-    return null;
-  });
+  const [bookingData, setBoookingData] = useState ("");
+
+
 
   const handleDateChange = (date) => {
     setFormData({ ...formData, selectedDate: date });
@@ -48,48 +41,38 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (formData.selectedDate && formData.selectedHour && formData.email) {
-      const reservationId = generateId();
-      //setFormData({ ...formData, reservationId: reservationId });
-      updatedFormData = { ...formData, reservationId };
-  
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('bookingData', JSON.stringify(updatedFormData));
-      }
-  
-      setDoc(doc(db, 'bookings', reservationId), updatedFormData)
+      localStorage.setItem('bookingData', JSON.stringify(formData));
+    
+      addDoc(collection(db, 'bookings'), formData)
         .then(() => {
           setFormSubmitted(true);
-          window.location.reload();
         })
         .catch((error) => {
           console.error('Error: ', error);
         });
     }
   };
-  
-
 
   const handleDelete = () => {
-    const bookingData = JSON.parse(localStorage.getItem('bookingData'));
-    const reservationId = bookingData.reservationId;
-
-    deleteDoc(doc(db, 'bookings', reservationId))
+    // Eliminar reserva de Firebase Firestore
+    deleteDoc(doc(db, "bookings", reservationId))
       .then(() => {
-        localStorage.removeItem('bookingData');
-        setFormSubmitted(false);
+        // Eliminar reserva de localstorage
+        localStorage.removeItem("bookingData");
+        setBoookingData("");
+        // Restablecer el estado del formulario y el estado de envío
         setFormData({
-          reservationId: '',
           selectedDate: new Date(),
           selectedHour: null,
           numberOfGuests: 1,
-          email: '',
+          email: "",
         });
-        window.location.reload();
+        setFormSubmitted(false);
       })
       .catch((error) => {
-        console.error('Error deleting document: ', error);
+        console.error("Error deleting document: ", error);
       });
   };
 
@@ -97,7 +80,6 @@ export default function Booking() {
     <>
       <Navbar background={"bg-dark relative mb-10"} />
       <section className="max-w-4xl mx-auto my-10 ">
-        
       {!bookingData ? (
         <>
         <OurAboutContactHeader title="Booking" description="Reserve a table" />
@@ -134,18 +116,28 @@ export default function Booking() {
         </form>
         </>
      ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
+          <>
+          
+            <button
+              onClick={handleDelete}
+              className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+            >
+              Delete Reservation
+            </button>
+            <p className="mt-4">
+              {bookingData}
+            
+              Booking details:
+              <br />
+              Date: {formData.selectedDate.toString()}
+              <br />
+              Hour: {formData.selectedHour}
+              <br />
+              Number of Guests: {formData.numberOfGuests}
+              <br />
+              Email: {formData.email}
+            </p>
+          </>
      )}
       </section>
     </>

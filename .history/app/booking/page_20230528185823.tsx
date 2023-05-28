@@ -136,14 +136,16 @@ export default function Booking() {
      ):(
 <>
     <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
+      <button
         onClick={handleDelete}
         className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
       >
         Delete Reservation
       </button>
+    </section>
+    <section>
+      <h2 className="mt-4">Booking Details:</h2>
+<p>{bookingData}</p>
     </section>
   </> 
      )}

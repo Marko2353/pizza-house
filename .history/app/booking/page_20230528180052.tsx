@@ -20,7 +20,7 @@ export default function Booking() {
     email: '',
   });
 
-  let updatedFormData = {};
+
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [bookingData, setBookingData] = useState(() => {
@@ -51,8 +51,7 @@ export default function Booking() {
   
     if (formData.selectedDate && formData.selectedHour && formData.email) {
       const reservationId = generateId();
-      //setFormData({ ...formData, reservationId: reservationId });
-      updatedFormData = { ...formData, reservationId };
+      const updatedFormData = { ...formData, reservationId };
   
       if (typeof window !== 'undefined') {
         localStorage.setItem('bookingData', JSON.stringify(updatedFormData));
@@ -134,18 +133,38 @@ export default function Booking() {
         </form>
         </>
      ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
+          <>
+          <section>
+            
+            <button
+              onClick={handleDelete}
+              className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+            >
+              Delete Reservation
+            </button>
+            <h2 className="mt-4">Booking Details:</h2>
+    <table className="mt-2">
+      <tbody>
+        <tr>
+          <th>Date:</th>
+          <td>{formData.selectedDate.toString()}</td>
+        </tr>
+        <tr>
+          <th>Hour:</th>
+          <td>{formData.selectedHour.toString()}</td>
+        </tr>
+        <tr>
+          <th>Number of Guests:</th>
+          <td>{formData.numberOfGuests}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{formData.email}</td>
+        </tr>
+      </tbody>
+    </table>
+            </section>
+          </>
      )}
       </section>
     </>

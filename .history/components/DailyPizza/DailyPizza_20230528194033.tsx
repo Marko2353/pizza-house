@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import CallToAction from "../buttons/CallToAction";
 import fetchData from "../../hooks/fetchData";
 
