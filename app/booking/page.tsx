@@ -22,7 +22,6 @@ export default function Booking() {
 
   let updatedFormData = {};
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [bookingData, setBookingData] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("bookingData");
@@ -60,7 +59,6 @@ export default function Booking() {
 
       setDoc(doc(db, "bookings", reservationId), updatedFormData)
         .then(() => {
-          setFormSubmitted(true);
           window.location.reload();
         })
         .catch((error) => {
@@ -70,13 +68,16 @@ export default function Booking() {
   };
 
   const handleDelete = () => {
-    const bookingData = JSON.parse(localStorage.getItem("bookingData"));
+    const bookingDataString = localStorage.getItem("bookingData");
+    const bookingData = bookingDataString
+      ? JSON.parse(bookingDataString)
+      : null;
     const reservationId = bookingData.reservationId;
 
     deleteDoc(doc(db, "bookings", reservationId))
       .then(() => {
         localStorage.removeItem("bookingData");
-        setFormSubmitted(false);
+
         setFormData({
           reservationId: "",
           selectedDate: new Date(),
