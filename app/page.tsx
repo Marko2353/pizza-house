@@ -10,6 +10,7 @@ import { CronJob } from "./api/cron";
 
 export default async function Home() {
   const { docData } = await fetchData("static", "landing");
+  const { pizzas } = await fetchData("pizzas", "pizza");
 
   const { dailyPizzaName, dailyPizzaDesc } = await CronJob();
 
@@ -28,7 +29,7 @@ export default async function Home() {
           description={docData?.description[2]}
           button={"book now"}
         />
-        <PCardCarousel />
+        <PCardCarousel pizza={pizzas} />
         <AboutContact
           title={docData?.title[1]}
           description={docData?.description[1]}
