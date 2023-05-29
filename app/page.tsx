@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardCarousel from "../components/PizzaCard/PCardCarousel";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
 import fetchData from "../hooks/fetchData";
-import 'leaflet/dist/leaflet.css';
+import { DocumentData } from "firebase/firestore";
+import { CronJob } from "./api/cron";
+import "leaflet/dist/leaflet.css";
 
 export default async function Home() {
   const { docData } = await fetchData("static", "landing");
+  const { pizzas } = await fetchData("pizzas", "pizza");
+
+  const { dailyPizzaName, dailyPizzaDesc } = await CronJob();
 
   return (
     <>
       <NavBar background={undefined} />
-      <DailyPizza />
+      <DailyPizza title={dailyPizzaName} description={dailyPizzaDesc} />
       <main>
         <AboutContact
           title={docData?.title[0]}
@@ -25,7 +30,7 @@ export default async function Home() {
           description={docData?.description[2]}
           button={"book now"}
         />
-        <PCardCarousel />
+        <PCardCarousel pizza={pizzas} />
         <AboutContact
           title={docData?.title[1]}
           description={docData?.description[1]}

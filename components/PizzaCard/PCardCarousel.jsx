@@ -5,9 +5,8 @@ import Image from "next/image";
 import Arrow from "../../public/img/arrow.svg";
 import fetchData from "../../hooks/fetchData";
 
-export default async function PCardCarousel() {
+export default function PCardCarousel({ pizza }) {
   const carouselRef = useRef(null);
-  const { docData } = await fetchData("pizzas", "pizza");
 
   const scrollToNext = () => {
     if (carouselRef.current) {
@@ -27,9 +26,9 @@ export default async function PCardCarousel() {
     }
   };
 
-  const pizzaCards = Object.keys(docData?.title).map((pizzaId) => {
-    const pizzaName = docData?.title[pizzaId];
-    const pizzaDescription = docData?.description[pizzaId];
+  const pizzaCards = Object.keys(pizza.title).map((pizzaId) => {
+    const pizzaName = pizza.title[pizzaId];
+    const pizzaDescription = pizza.description[pizzaId];
 
     return (
       <div className="flex mr-4 " key={pizzaId}>
