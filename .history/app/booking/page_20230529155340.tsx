@@ -71,8 +71,11 @@ export default function Booking() {
 
 
   const handleDelete = () => {
+
     const bookingDataString = localStorage.getItem('bookingData');
-    const bookingData = bookingDataString ? JSON.parse(bookingDataString) : null;
+    const bookingData = localStorage.getItem('bookingData') ? JSON.parse(bookingDataString) : null;
+
+    const bookingData = JSON.parse(localStorage.getItem('bookingData'));
     const reservationId = bookingData.reservationId;
 
     deleteDoc(doc(db, 'bookings', reservationId))

@@ -14,7 +14,7 @@ const Map = () => {
     <MapContainer
       center={[55.6830888756627, 12.571898796390165]}
       zoom={13}
-      style={{ height: '250px', width: '20%' }} 
+      style={{ height: '250px', width: '20%' }}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={[55.6830888756627, 12.571898796390165]} icon={customMarkerIcon} />

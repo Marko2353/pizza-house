@@ -4,7 +4,7 @@ import Image from "next/image";
 import CallToAction from "../buttons/CallToAction";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Map from "./Map";
+import Map2 from "./Map2";
 import {
   faFacebook,
   faInstagram,
@@ -105,7 +105,7 @@ export default function Footer() {
             <li>Sun: 8:00 - 20:00</li>
           </ul>
         </div>
-          {/*<Map />*/}
+          <Map2 />
         
       </div>
     </footer>

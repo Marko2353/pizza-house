@@ -105,7 +105,7 @@ export default function Footer() {
             <li>Sun: 8:00 - 20:00</li>
           </ul>
         </div>
-          {/*<Map />*/}
+          <Map />
         
       </div>
     </footer>
