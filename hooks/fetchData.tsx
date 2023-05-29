@@ -1,8 +1,6 @@
 import {
-  DocumentData,
-  DocumentSnapshot,
   doc,
-  getDoc,
+  getDoc
 } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -12,13 +10,4 @@ export default async function fetchData(collection, id) {
   const docData = docFetched.data();
 
   return { docData };
-  // let docRef = doc(db, collection, id);
-  // let result;
-  // let error = null;
-  // try {
-  //   result = await getDoc(docRef);
-  // } catch (e) {
-  //   error = e;
-  // }
-  // return { result, error };
 }

@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardCarousel from "../components/PizzaCard/PCardCarousel";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
 import fetchData from "../hooks/fetchData";
+import { DocumentData } from "firebase/firestore";
+import { CronJob } from "./api/cron";
 
 export default async function Home() {
   const { docData } = await fetchData("static", "landing");
 
+  const { dailyPizzaName, dailyPizzaDesc } = await CronJob();
+
   return (
     <>
       <NavBar background={undefined} />
-      <DailyPizza />
+      <DailyPizza title={dailyPizzaName} description={dailyPizzaDesc} />
       <main>
         <AboutContact
           title={docData?.title[0]}
