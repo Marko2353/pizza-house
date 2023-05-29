@@ -1,31 +1,31 @@
 "use client";
-import { collection, addDoc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, setDoc } from "firebase/firestore";
 import { deleteDoc, doc } from "firebase/firestore";
-import React, { useState } from 'react';
-import Navbar from '../../components/Navbar/Navbar';
-import OurAboutContactHeader from '../../components/OurAboutContactHeader/OurAboutContactHeader';
-import BookingHours from './BookingHours';
-import DateBooking from './DateBooking';
-import { NumberGuest } from './NumberGuest';
-import { BookingEmail } from './BookingEmail';
-import { db } from '../../firebase';
-import generateId from './generateId';
+import React, { useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import OurAboutContactHeader from "../../components/OurAboutContactHeader/OurAboutContactHeader";
+import BookingHours from "./BookingHours";
+import DateBooking from "./DateBooking";
+import { NumberGuest } from "./NumberGuest";
+import { BookingEmail } from "./BookingEmail";
+import { db } from "../../firebase";
+import generateId from "./generateId";
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    reservationId: '',
+    reservationId: "",
     selectedDate: new Date(),
     selectedHour: null,
     numberOfGuests: 1,
-    email: '',
+    email: "",
   });
 
   let updatedFormData = {};
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [bookingData, setBookingData] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('bookingData');
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("bookingData");
     }
     return null;
   });
@@ -48,48 +48,46 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (formData.selectedDate && formData.selectedHour && formData.email) {
       const reservationId = generateId();
       //setFormData({ ...formData, reservationId: reservationId });
       updatedFormData = { ...formData, reservationId };
-  
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('bookingData', JSON.stringify(updatedFormData));
+
+      if (typeof window !== "undefined") {
+        localStorage.setItem("bookingData", JSON.stringify(updatedFormData));
       }
-  
-      setDoc(doc(db, 'bookings', reservationId), updatedFormData)
+
+      setDoc(doc(db, "bookings", reservationId), updatedFormData)
         .then(() => {
           setFormSubmitted(true);
           window.location.reload();
         })
         .catch((error) => {
-          console.error('Error: ', error);
+          console.error("Error: ", error);
         });
     }
   };
-  
-
 
   const handleDelete = () => {
-    const bookingData = JSON.parse(localStorage.getItem('bookingData'));
+    const bookingData = JSON.parse(localStorage.getItem("bookingData"));
     const reservationId = bookingData.reservationId;
 
-    deleteDoc(doc(db, 'bookings', reservationId))
+    deleteDoc(doc(db, "bookings", reservationId))
       .then(() => {
-        localStorage.removeItem('bookingData');
+        localStorage.removeItem("bookingData");
         setFormSubmitted(false);
         setFormData({
-          reservationId: '',
+          reservationId: "",
           selectedDate: new Date(),
           selectedHour: null,
           numberOfGuests: 1,
-          email: '',
+          email: "",
         });
         window.location.reload();
       })
       .catch((error) => {
-        console.error('Error deleting document: ', error);
+        console.error("Error deleting document: ", error);
       });
   };
 
@@ -97,58 +95,59 @@ export default function Booking() {
     <>
       <Navbar background={"bg-dark relative mb-10"} />
       <section className="max-w-4xl mx-auto my-10 ">
-        
-      {!bookingData ? (
-        <>
-        <OurAboutContactHeader title="Booking" description="Reserve a table" />
+        {!bookingData ? (
+          <>
+            <OurAboutContactHeader
+              title="Booking"
+              description="Reserve a table"
+            />
 
-        <form onSubmit={handleSubmit}>
-          <h3 className="pt-10 pb-5">
-            Select a date/hour for booking a table:
-          </h3>
-          <DateBooking
-            selectedDate={formData.selectedDate}
-            onDateChange={handleDateChange}
-          />
-          <BookingHours
-            selectedHour={formData.selectedHour}
-            onHourChange={handleHourChange}
-          />
-          <h3 className="pt-10 pb-5">Number of guests:</h3>
-          <NumberGuest
-            numberOfGuests={formData.numberOfGuests}
-            onNumberOfGuestsChange={handleNumberOfGuestsChange}
-          />
-          <h3 className="pt-10 pb-5">Contact email:</h3>
-          <BookingEmail
-            email={formData.email}
-            onEmailChange={handleEmailChange}
-          />
+            <form onSubmit={handleSubmit}>
+              <h3 className="pt-10 pb-5">
+                Select a date/hour for booking a table:
+              </h3>
+              <DateBooking
+                selectedDate={formData.selectedDate}
+                onDateChange={handleDateChange}
+              />
+              <BookingHours
+                selectedHour={formData.selectedHour}
+                onHourChange={handleHourChange}
+              />
+              <h3 className="pt-10 pb-5">Number of guests:</h3>
+              <NumberGuest
+                numberOfGuests={formData.numberOfGuests}
+                onNumberOfGuestsChange={handleNumberOfGuestsChange}
+              />
+              <h3 className="pt-10 pb-5">Contact email:</h3>
+              <BookingEmail
+                email={formData.email}
+                onEmailChange={handleEmailChange}
+              />
 
-          <button
-            type="submit"
-            className="px-4 py-2 mt-5 text-white rounded-md bg-primary"
-          >
-            Submit
-          </button>
-        </form>
-        </>
-     ):(
-<>
-    <section>
-      <h2 className="mt-4">Booking Details:</h2>
-<p>{bookingData.toString()}</p>
-<button
-        onClick={handleDelete}
-        className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
-      >
-        Delete Reservation
-      </button>
-    </section>
-  </> 
-     )}
+              <button
+                type="submit"
+                className="px-4 py-2 mt-5 text-white rounded-md bg-primary"
+              >
+                Submit
+              </button>
+            </form>
+          </>
+        ) : (
+          <>
+            <section>
+              <h2 className="mt-4">Booking Details:</h2>
+              <p>{bookingData.toString()}</p>
+              <button
+                onClick={handleDelete}
+                className="px-4 py-2 mt-5 text-white bg-red-500 rounded-md"
+              >
+                Delete Reservation
+              </button>
+            </section>
+          </>
+        )}
       </section>
     </>
-
   );
 }

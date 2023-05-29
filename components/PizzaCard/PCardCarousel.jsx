@@ -26,9 +26,9 @@ export default function PCardCarousel({ pizza }) {
     }
   };
 
-  const pizzaCards = Object.keys(pizza.title).map((pizzaId) => {
-    const pizzaName = pizza.title[pizzaId];
-    const pizzaDescription = pizza.description[pizzaId];
+  const pizzaCards = Object.keys(pizza?.title).map((pizzaId) => {
+    const pizzaName = pizza?.title[pizzaId];
+    const pizzaDescription = pizza?.description[pizzaId];
 
     return (
       <div className="flex mr-4 " key={pizzaId}>

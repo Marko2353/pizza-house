@@ -53,7 +53,11 @@ export default function Footer() {
           <h3 className="mb-4">Social Media</h3>
           <ul className="flex flex-col gap-4">
             <li className="text-light">
-              <Link target="_blank" className="flex items-center gap-3 text-xs" href={"https://instagram.com/"}>
+              <Link
+                target="_blank"
+                className="flex items-center gap-3 text-xs"
+                href={"https://instagram.com/"}
+              >
                 <FontAwesomeIcon
                   className="text-xl"
                   icon={faInstagram}
@@ -105,8 +109,7 @@ export default function Footer() {
             <li>Sun: 8:00 - 20:00</li>
           </ul>
         </div>
-          <Map />
-        
+        <Map />
       </div>
     </footer>
   );

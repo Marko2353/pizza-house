@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "../components/Navbar/Navbar";
 import DailyPizza from "../components/DailyPizza/DailyPizza";
 import PCardCarousel from "../components/PizzaCard/PCardCarousel";
 import AboutContact from "../components/AboutContact/AboutContact";
 import BookStatic from "../components/BookStatic/BookStatic";
 import fetchData from "../hooks/fetchData";
-import { DocumentData } from "firebase/firestore";
 import { CronJob } from "./api/cron";
 import "leaflet/dist/leaflet.css";
 

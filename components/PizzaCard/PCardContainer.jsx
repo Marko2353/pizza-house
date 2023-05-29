@@ -1,16 +1,13 @@
 import React from "react";
 import PizzaCard from "./PizzaCard";
-import fetchData from "../../hooks/fetchData";
 
-export default async function PCardContainer() {
-  const { docData } = await fetchData("pizzas", "pizza");
-
+export default function PCardContainer(pizza) {
   return (
     <div className="container flex flex-wrap gap-4 m-auto">
       <>
-        {Object.keys(docData?.title).map((pizzaId) => {
-          const pizzaName = docData?.title[pizzaId];
-          const pizzaDescription = docData?.description[pizzaId];
+        {Object.keys(pizza?.title).map((pizzaId) => {
+          const pizzaName = pizza?.title[pizzaId];
+          const pizzaDescription = pizza?.description[pizzaId];
 
           return (
             <PizzaCard
