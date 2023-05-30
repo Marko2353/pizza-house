@@ -37,11 +37,19 @@ export default function Footer() {
               </Link>
             </li>
             <li className="text-sm">
-              <CallToAction name={"order takeaway"} link={"/takeaway"} active={''} />
+              <CallToAction
+                name={"order takeaway"}
+                link={"/takeaway"}
+                active={""}
+              />
             </li>
 
             <li className="text-sm">
-              <CallToAction name={"book a table"} link={"/booking"} active={''} />
+              <CallToAction
+                name={"book a table"}
+                link={"/booking"}
+                active={""}
+              />
             </li>
           </ul>
         </div>
@@ -108,8 +116,8 @@ export default function Footer() {
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71903.55643432608!2d12.490188388768793!3d55.72399305731688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46524e6d778cb02b%3A0x7e3ab7668df86d7c!2sCphbusiness%20Lyngby!5e0!3m2!1sen!2sdk!4v1685450184234!5m2!1sen!2sdk"
-          width="300"
-          height="300"
+          width="250"
+          height="250"
           allowFullScreen={false}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

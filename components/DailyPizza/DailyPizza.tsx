@@ -17,7 +17,7 @@ export default function DailyPizza({ title, description }) {
         {description}
       </p>
       <span className="z-30 text-lg">
-        <CallToAction name="order now" link="#" />
+        <CallToAction name="order now" link="/takeaway" active={undefined} />
       </span>
     </section>
   );

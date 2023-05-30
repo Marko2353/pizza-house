@@ -24,6 +24,7 @@ export default async function Home() {
           title={docData?.title[0]}
           description={docData?.description[0]}
           button={"more about us"}
+          link={"/about"}
         />
         <BookStatic
           title={docData?.title[2]}
@@ -35,6 +36,7 @@ export default async function Home() {
           title={docData?.title[1]}
           description={docData?.description[1]}
           button={"contact us"}
+          link={"/contact"}
         />
       </main>
     </>
