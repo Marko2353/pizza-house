@@ -37,11 +37,11 @@ export default function Footer() {
               </Link>
             </li>
             <li className="text-sm">
-              <CallToAction name={"order takeaway"} link={"/takeaway"} />
+              <CallToAction name={"order takeaway"} link={"/takeaway"} active={''} />
             </li>
 
             <li className="text-sm">
-              <CallToAction name={"book a table"} link={"/booking"} />
+              <CallToAction name={"book a table"} link={"/booking"} active={''} />
             </li>
           </ul>
         </div>

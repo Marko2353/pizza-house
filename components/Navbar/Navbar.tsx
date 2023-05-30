@@ -59,8 +59,20 @@ export default function NavBar({ background }) {
             </Link>
           </li>
           <div className="flex gap-3 ml-4">
-            <CallToAction name={"order takeaway"} link={"/takeaway"} />
-            <CallToAction name={"book now"} link={"booking"} />
+            <CallToAction
+              name={"order takeaway"}
+              link={"/takeaway"}
+              active={
+                pathname.startsWith("/takeaway") ? "text-primary" : "text-light"
+              }
+            />
+            <CallToAction
+              name={"book now"}
+              link={"/booking"}
+              active={
+                pathname.startsWith("/booking") ? "text-primary" : "text-light"
+              }
+            />
           </div>
         </ul>
       </div>
