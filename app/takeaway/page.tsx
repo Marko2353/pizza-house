@@ -20,7 +20,7 @@ export default async function Takeaway() {
           description={docData?.description[3]}
         />
 
-        <div className="container m-auto flex gap-5">
+        <div className="container flex gap-5 m-auto">
           <div className="container flex flex-wrap gap-4 m-auto">
             {pizzaProducts.map((product) => (
               <PizzaProduct key={product.id} product={product} />
