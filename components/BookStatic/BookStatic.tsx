@@ -10,7 +10,7 @@ export default function BookStatic({ title, description, button }) {
       <div>
         <h2>{title}</h2>
         <p className="my-5 w-[75ch]">{description}</p>
-        <Button name={button} link={"#"} />
+        <Button name={button} link={"/booking"} func={undefined} />
       </div>
     </section>
   );
