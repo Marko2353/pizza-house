@@ -1,5 +1,6 @@
 import React from "react";
 import PizzaCard from "./PizzaCard";
+import Link from "next/link";
 
 export default function PCardContainer({ pizza }) {
   return (
@@ -8,14 +9,16 @@ export default function PCardContainer({ pizza }) {
         {Object.keys(pizza.title).map((pizzaId) => {
           const pizzaName = pizza.title[pizzaId];
           const pizzaDescription = pizza.description[pizzaId];
-          const pizzaPrice = pizza.price[pizzaId];
+          // const pizzaPrice = pizza.price[pizzaId];
 
           return (
-            <PizzaCard
-              key={pizzaId}
-              pizzaName={pizzaName}
-              pizzaDescription={pizzaDescription}
-            />
+            <Link href={`/ourpizza/${pizzaId}`}>
+              <PizzaCard
+                key={pizzaId}
+                pizzaName={pizzaName}
+                pizzaDescription={pizzaDescription}
+              />
+            </Link>
           );
         })}
       </>
