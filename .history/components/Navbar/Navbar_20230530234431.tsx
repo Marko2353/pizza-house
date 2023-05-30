@@ -63,14 +63,14 @@ export default function NavBar({ background }) {
               name={"order takeaway"}
               link={"/takeaway"}
               active={
-                pathname.startsWith("/takeaway") ? "bg-primary underline" : "text-light"
+                pathname.startsWith("/takeaway") ? "bg-primary" : "text-light"
               }
             />
             <CallToAction
               name={"book now"}
               link={"/booking"}
               active={
-                pathname.startsWith("/booking") ? "bg-primary underline" : "text-light"
+                pathname.startsWith("/booking") ? "bg-primary" : "text-light"
               }
             />
           </div>

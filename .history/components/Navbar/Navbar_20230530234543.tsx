@@ -70,7 +70,7 @@ export default function NavBar({ background }) {
               name={"book now"}
               link={"/booking"}
               active={
-                pathname.startsWith("/booking") ? "bg-primary underline" : "text-light"
+                pathname.startsWith("/booking") ? "bg-primary" : "text-light"
               }
             />
           </div>
