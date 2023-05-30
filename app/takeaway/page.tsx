@@ -9,10 +9,6 @@ export default async function Takeaway() {
   const { docData } = await fetchData("static", "landing");
   const { pizzas } = await fetchData("pizzas", "pizza");
 
-  function text() {
-    console.log("works");
-  }
-
   return (
     <>
       <Navbar background={"bg-dark relative mb-10"} />
@@ -35,7 +31,7 @@ export default async function Takeaway() {
                   pizzaName={pizzaName}
                   pizzaDescription={pizzaDescription}
                   price={pizzaPrice}
-                  click={text()}
+                  click={undefined}
                 />
               );
             })}
@@ -45,7 +41,7 @@ export default async function Takeaway() {
             <h2>Shopping cart</h2>
             <div>
               <div className="flex justify-between">
-                <span className="text-light">saad</span>
+                <span className="text-light">asdsad</span>
                 <span className="text-light">$ 5</span>
                 <button className="text-light">X</button>
               </div>
