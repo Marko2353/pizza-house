@@ -3,7 +3,6 @@ import Image from "next/image";
 import CallToAction from "../buttons/CallToAction";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Map from "./Map";
 import {
   faFacebook,
   faInstagram,
@@ -107,7 +106,14 @@ export default function Footer() {
             <li>Sun: 8:00 - 20:00</li>
           </ul>
         </div>
-        <Map />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71903.55643432608!2d12.490188388768793!3d55.72399305731688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46524e6d778cb02b%3A0x7e3ab7668df86d7c!2sCphbusiness%20Lyngby!5e0!3m2!1sen!2sdk!4v1685450184234!5m2!1sen!2sdk"
+          width="300"
+          height="300"
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </footer>
   );
