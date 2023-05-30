@@ -26,7 +26,13 @@
     "react-datepicker": "^4.11.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
+<<<<<<< HEAD
     "touch-cli": "^0.0.1"
+=======
+    "react-redux": "^8.0.5",
+    "touch-cli": "^0.0.1",
+    "use-places-autocomplete": "^4.0.0"
+>>>>>>> e440b5a26dc7b636875da4139911cd7ff89dadcf
   },
   "devDependencies": {
     "@types/node": "20.2.0",

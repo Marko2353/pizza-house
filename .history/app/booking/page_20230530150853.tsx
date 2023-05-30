@@ -91,21 +91,6 @@ export default function Booking() {
       });
   };
 
-  let reservationId = "";
-  let selectedDate = "";
-  let selectedHour = "";
-  let numberOfGuests = "";
-  let email = "";
-
-  if (bookingData) {
-    const bookingDataArray = bookingData.split(",");
-    reservationId = bookingDataArray[0].split(":")[1].replace(/"/g, "");
-    selectedDate = bookingDataArray[1].split(":")[1].replace(/"/g, "");
-    selectedHour = bookingDataArray[2].split(":")[1].replace(/"/g, "");
-    numberOfGuests = bookingDataArray[3].split(":")[1];
-    email = bookingDataArray[4].split(":")[1].replace(/"/g, "");
-  }
-
   return (
     <>
       <Navbar background={"bg-dark relative mb-10"} />
@@ -150,24 +135,26 @@ export default function Booking() {
           </>
         ) : (
           <>
-            <section>
-              <h2 className="mt-4">Booking Details:</h2>
-              <p className="my-10">Reservation ID: {reservationId}</p>
-              <p className="my-10">Selected Date: {selectedDate}</p>
-              <p className="my-10">Selected Hour: {selectedHour}</p>
-              <p className="my-10">Number of Guests: {numberOfGuests}</p>
-              <p className="my-10">Email: {email}</p>
-
-              <button
-                onClick={handleDelete}
-                className="px-4 py-2 font-bold text-white uppercase bg-red-600 rounded-xl box-shadow"
-              >
-                Delete Reservation
-              </button>
-            </section>
-          </>
-        )}
-      </section>
+<section>
+          <h2 className="mt-4">Booking Details:</h2>
+          <p className="my-10">
+            Reservation ID: {bookingData.reservationId}
+          </p>
+          <p className="my-10">
+            Selected Date: {bookingData.selectedDate.toString()}
+          </p>
+          <p className="my-10">Selected Hour: {bookingData.selectedHour}</p>
+          <p className="my-10">
+            Number of Guests: {bookingData.numberOfGuests}
+          </p>
+          <p className="my-10">Email: {bookingData.email}</p>
+          <button
+            onClick={handleDelete}
+            className="px-4 py-2 font-bold text-white uppercase bg-red-600 rounded-xl box-shadow"
+          >
+            Delete Reservation
+          </button>
+        </section>
     </>
   );
 }

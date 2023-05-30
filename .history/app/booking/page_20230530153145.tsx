@@ -91,6 +91,7 @@ export default function Booking() {
       });
   };
 
+  // Extracción de los datos de reserva
   let reservationId = "";
   let selectedDate = "";
   let selectedHour = "";

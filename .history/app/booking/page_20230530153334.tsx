@@ -152,6 +152,7 @@ export default function Booking() {
           <>
             <section>
               <h2 className="mt-4">Booking Details:</h2>
+              <p>{bookingData}</p>
               <p className="my-10">Reservation ID: {reservationId}</p>
               <p className="my-10">Selected Date: {selectedDate}</p>
               <p className="my-10">Selected Hour: {selectedHour}</p>

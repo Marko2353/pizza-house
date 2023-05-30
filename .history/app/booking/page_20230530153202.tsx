@@ -103,7 +103,7 @@ export default function Booking() {
     selectedDate = bookingDataArray[1].split(":")[1].replace(/"/g, "");
     selectedHour = bookingDataArray[2].split(":")[1].replace(/"/g, "");
     numberOfGuests = bookingDataArray[3].split(":")[1];
-    email = bookingDataArray[4].split(":")[1].replace(/"/g, "");
+    email = bookingDataArray[4].split(":")[1].replace(/"/g, "}");
   }
 
   return (

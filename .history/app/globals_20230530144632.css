@@ -46,13 +46,6 @@ h4 {
 }
 
 @layer components {
-  .active {
-    @apply text-secondary;
-  }
-
-  .nonActive {
-    @apply text-light;
-  }
 
   .call-to-action {
     @apply z-20 block float-left p-3 font-bold uppercase bg-accent text-light rounded-xl w-fit;

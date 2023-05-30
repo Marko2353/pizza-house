@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@fontsource/pacifico'; /* Importa la fuente Pacifico desde @fontsource/pacifico */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -23,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-weight: 400;
   font-style: normal;
   @apply text-primary;
@@ -46,14 +47,6 @@ h4 {
 }
 
 @layer components {
-  .active {
-    @apply text-secondary;
-  }
-
-  .nonActive {
-    @apply text-light;
-  }
-
   .call-to-action {
     @apply z-20 block float-left p-3 font-bold uppercase bg-accent text-light rounded-xl w-fit;
   }

@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/pacifico'; /* Importa la fuente Pacifico desde @fontsource/pacifico */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  @apply relative bg-light;
+}
+
+p,
+span {
+  @apply text-base text-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-style: normal;
+  @apply text-primary;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+h4 {
+  @apply text-base;
+}
+
+@layer components {
+  /* Resto de estilos */
+}
