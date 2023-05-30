@@ -7,8 +7,7 @@ import BookStatic from "../components/BookStatic/BookStatic";
 import fetchData from "../hooks/fetchData";
 import { CronJob } from "./api/cron";
 import "leaflet/dist/leaflet.css";
-import '../app/globals.css';
-
+import "../app/globals.css";
 
 export default async function Home() {
   const { docData } = await fetchData("static", "landing");
