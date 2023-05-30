@@ -37,11 +37,6 @@ export default function Form() {
 
       setIsSubmitted(true);
       setError("");
-      formData.fname="";
-      formData.lname="";
-      formData.phone="";
-      formData.email="";
-      formData.msg="";
     } catch (error) {
       console.error("Error adding document: ", error);
     }

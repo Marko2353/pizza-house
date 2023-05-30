@@ -7,6 +7,7 @@ import {
   totalPriceSelector,
 } from "../../store/features/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/store";
+import CallToAction from "../buttons/CallToAction";
 import QtyBtn from "../buttons/QtyBtn";
 
 const CheckoutBox = () => {

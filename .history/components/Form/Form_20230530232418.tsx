@@ -37,11 +37,6 @@ export default function Form() {
 
       setIsSubmitted(true);
       setError("");
-      formData.fname="";
-      formData.lname="";
-      formData.phone="";
-      formData.email="";
-      formData.msg="";
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -128,7 +123,7 @@ export default function Form() {
       <button
         className="self-center px-4 py-2 font-bold text-white uppercase bg-primary rounded-xl box-shadow w-fit hover:cursor-pointer"
         type="submit"
-        >Send</button>
+      />Send
     </form>
   );
 }

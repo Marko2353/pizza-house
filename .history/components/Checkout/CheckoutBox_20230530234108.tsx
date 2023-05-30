@@ -7,6 +7,7 @@ import {
   totalPriceSelector,
 } from "../../store/features/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/store";
+import CallToAction from "../buttons/CallToAction";
 import QtyBtn from "../buttons/QtyBtn";
 
 const CheckoutBox = () => {
@@ -19,7 +20,7 @@ const CheckoutBox = () => {
   const [checkoutMessage, setCheckoutMessage] = useState("");
 
   const handleCheckout = () => {
-    setCheckoutMessage("Order sended!");
+    setCheckoutMessage("Pedido realizado");
 
     setTimeout(() => {
       window.location.reload();
@@ -45,7 +46,7 @@ const CheckoutBox = () => {
       </div>
       <p className="text-light">Total cost: $ {totalPrice}</p>
       <button className="call-to-action box-shadow" onClick={handleCheckout}>CHECK OUT</button>
-      {checkoutMessage && <p className="text-green-500">{checkoutMessage}</p>}
+      {checkoutMessage && <p className="text-white">{checkoutMessage}</p>}
     </div>
   );
 };

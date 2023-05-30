@@ -99,7 +99,6 @@ export default function Booking() {
 
   if (bookingData) {
     const bookingDataArray = bookingData.split(",");
-    console.log(bookingDataArray)
     reservationId = bookingDataArray[0].split(":")[1].replace(/"/g, "");
     selectedDate = bookingDataArray[1].split(":")[1].replace(/"/g, "");
     selectedHour = bookingDataArray[2].split(":")[1].replace(/"/g, "");
@@ -153,11 +152,11 @@ export default function Booking() {
           <>
             <section>
               <h2 className="mt-4">Booking Details:</h2>
-              <p className="my-10"><b>Reservation ID:</b> {reservationId}</p>
-              <p className="my-10"><b>Selected Date:</b> {selectedDate}</p>
-              <p className="my-10"><b>Selected Hour:</b> {selectedHour}</p>
-              <p className="my-10"><b>Number of Guests:</b> {numberOfGuests}</p>
-              <p className="my-10"><b>Email:</b> {email}</p>
+              <p className="my-10">Reservation ID: {reservationId}</p>
+              <p className="my-10">Selected Date: {selectedDate}</p>
+              <p className="my-10">Selected Hour: {selectedHour}</p>
+              <p className="my-10">Number of Guests: {numberOfGuests}</p>
+              <p className="my-10">Email: {email}</p>
 
               <button
                 onClick={handleDelete}
