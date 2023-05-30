@@ -1,0 +1,32 @@
+"use client"
+import React, { useState } from "react";
+import Image from "next/image";
+import PizzaImg from "../../public/img/pizza_example.png";
+
+
+const PizzaCard = ({ pizzaId, pizzaName, pizzaDescription, price, onClick }) => {
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleButtonClick = () => {
+    setClickCount(clickCount + 1);
+    onClick(pizzaId, clickCount + 1);
+  };
+
+  return (
+    <div className="flex flex-col justify-between gap-5 p-5 shadow-xl bg-light rounded-xl">
+      <h2 className="text-3xl h-20 mx-auto text-center w-[10ch]">
+        {pizzaName}
+      </h2>
+      <Image src={PizzaImg} alt="" />
+      <div className="flex flex-col justify-between gap-4">
+        <p className="w-[20ch] text-center h-32">{pizzaDescription}</p>
+        <span>Price: $ {price}</span>
+        <button className="w-1/3 bg-primary" onClick={handleButtonClick}>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default PizzaCard;
