@@ -5,7 +5,7 @@
 @import '@fontsource/pacifico'; /* Importa la fuente Pacifico desde @fontsource/pacifico */
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Pacifico', sans-serif;
 }
 
 body {
@@ -23,7 +23,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Pacifico', sans-serif;
   font-weight: 400;
   font-style: normal;
   @apply text-primary;
@@ -46,6 +45,7 @@ h4 {
 }
 
 @layer components {
+
   .call-to-action {
     @apply z-20 block float-left p-3 font-bold uppercase bg-accent text-light rounded-xl w-fit;
   }

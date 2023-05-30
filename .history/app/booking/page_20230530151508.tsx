@@ -20,7 +20,7 @@ export default function Booking() {
   });
 
   let updatedFormData = {};
-
+  let parsedBookingData = JSON.parse(0);
   const [bookingData, setBookingData] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("bookingData");
@@ -58,6 +58,7 @@ export default function Booking() {
 
       setDoc(doc(db, "bookings", reservationId), updatedFormData)
         .then(() => {
+          parsedBookingData = JSON.parse(bookingData);
           window.location.reload();
         })
         .catch((error) => {
@@ -84,27 +85,13 @@ export default function Booking() {
           numberOfGuests: 1,
           email: "",
         });
+        
         window.location.reload();
       })
       .catch((error) => {
         console.error("Error deleting document: ", error);
       });
   };
-
-  let reservationId = "";
-  let selectedDate = "";
-  let selectedHour = "";
-  let numberOfGuests = "";
-  let email = "";
-
-  if (bookingData) {
-    const bookingDataArray = bookingData.split(",");
-    reservationId = bookingDataArray[0].split(":")[1].replace(/"/g, "");
-    selectedDate = bookingDataArray[1].split(":")[1].replace(/"/g, "");
-    selectedHour = bookingDataArray[2].split(":")[1].replace(/"/g, "");
-    numberOfGuests = bookingDataArray[3].split(":")[1];
-    email = bookingDataArray[4].split(":")[1].replace(/"/g, "");
-  }
 
   return (
     <>
@@ -150,21 +137,26 @@ export default function Booking() {
           </>
         ) : (
           <>
-            <section>
-              <h2 className="mt-4">Booking Details:</h2>
-              <p className="my-10">Reservation ID: {reservationId}</p>
-              <p className="my-10">Selected Date: {selectedDate}</p>
-              <p className="my-10">Selected Hour: {selectedHour}</p>
-              <p className="my-10">Number of Guests: {numberOfGuests}</p>
-              <p className="my-10">Email: {email}</p>
-
-              <button
-                onClick={handleDelete}
-                className="px-4 py-2 font-bold text-white uppercase bg-red-600 rounded-xl box-shadow"
-              >
-                Delete Reservation
-              </button>
-            </section>
+             <section>
+          <h2 className="mt-4">Booking Details:</h2>
+          <p className="my-10">
+            Reservation ID: {parsedBookingData.reservationId}
+          </p>
+          <p className="my-10">
+            Selected Date: {parsedBookingData.selectedDate.toString()}
+          </p>
+          <p className="my-10">Selected Hour: {parsedBookingData.selectedHour}</p>
+          <p className="my-10">
+            Number of Guests: {parsedBookingData.numberOfGuests}
+          </p>
+          <p className="my-10">Email: {parsedBookingData.email}</p>
+          <button
+            onClick={handleDelete}
+            className="px-4 py-2 font-bold text-white uppercase bg-red-600 rounded-xl box-shadow"
+          >
+            Delete Reservation
+          </button>
+        </section>
           </>
         )}
       </section>

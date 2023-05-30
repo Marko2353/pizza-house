@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/pacifico": "^5.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
@@ -24,8 +25,7 @@
     "react-datepicker": "^4.11.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
-    "touch-cli": "^0.0.1",
-    "use-places-autocomplete": "^4.0.0"
+    "touch-cli": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "20.2.0",

@@ -84,6 +84,7 @@ export default function Booking() {
           numberOfGuests: 1,
           email: "",
         });
+        const parsedBookingData = JSON.parse(bookingData);
         window.location.reload();
       })
       .catch((error) => {
@@ -91,6 +92,7 @@ export default function Booking() {
       });
   };
 
+  // Extracción de los datos de reserva
   let reservationId = "";
   let selectedDate = "";
   let selectedHour = "";
